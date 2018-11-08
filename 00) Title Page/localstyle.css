@@ -3,6 +3,14 @@
 /*headers
 *****************/
 h2{
+  font-size: 15px;
+  margin-bottom: 0px;
+  color: #7c795d; 
+  font-family: 'Trocchi', serif; 
+}
+
+h1{
+
 }
 
 /* containers
@@ -19,11 +27,29 @@ h2{
 /* buttons 
 **************/
 .nextbtn_left{
-  width:100px;
+  width:300px;
   left:1rem;
   margin-bottom: 1px;
   background-color: transparent;
   color: #000;
   font-family: "Arial Black", Gadget, sans-serif;
   font-size: 20px;
+}
+
+.nextbtn_right{ 
+  position: absolute;
+  width:300px;
+  right:10px;
+  background-color: transparent;
+  color: #000;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 20px;
+}
+
+/* img
+****************/
+img{
+  height: 100px;
+  padding-left:5rem;
+  padding-right:5rem;
 }
