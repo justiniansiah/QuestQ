@@ -5,10 +5,26 @@
 h2{
 }
 
+
 /* containers
 ****************/
 .divcenter{
   text-align: center;
+}
+
+.text{
+  text-align: justify;
+  padding-top: 1rem;
+  width: 50%;
+  margin:auto;
+}
+
+.keyqn{
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  text-align: left;
 }
 
 .imgContainer{
@@ -19,7 +35,7 @@ h2{
 /* buttons 
 **************/
 .nextbtn_left{
-  width:100px;
+  width:300px;
   left:1rem;
   margin-bottom: 1px;
   background-color: transparent;
