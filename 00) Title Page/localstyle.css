@@ -19,9 +19,24 @@ h1{
   text-align: center;
 }
 
+.Container{
+  padding:2rem;
+  content: "";
+  clear: both;
+  display: table;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .imgContainer{
-  float:left;
-  margin-left:100px;
+  text-align: center;
+  float: left;
+  padding: 5px;
+  width: 250px;
+  height: 300px;
+  margin-left: 4rem;
+  margin-right: auto;
 }
 
 /* buttons 
@@ -49,7 +64,6 @@ h1{
 /* img
 ****************/
 img{
-  height: 100px;
   padding-left:5rem;
   padding-right:5rem;
 }
