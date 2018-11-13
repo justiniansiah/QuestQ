@@ -5,6 +5,13 @@
 h2{
 }
 
+p{
+  font-size: 20px;
+}
+
+li{
+  font-size: 20px;
+}
 
 /* containers
 ****************/
@@ -23,7 +30,7 @@ h2{
   margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 80%;
   text-align: left;
 }
 
