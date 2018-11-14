@@ -1,0 +1,12 @@
+- how to model alternative queues
+  - curr prob: assumue fixed service time -> fixed queue for alt model
+
+- talk abt how we are modelling lead & service time
+  - service: fixed
+  - lead: calculate queue + service
+  - > model to fit observations
+
+- current interarrivals
+  - exponential
+  - model to generate more datapoints? A/R method?
+  
