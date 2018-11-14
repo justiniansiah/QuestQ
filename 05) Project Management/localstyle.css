@@ -3,12 +3,19 @@
 /*headers
 *****************/
 h2{
+  color: #7c795d;  
+  font-size: 40px; 
+  font-weight: normal; 
+  line-height: 48px; 
+  margin: 0; 
+  padding-top: 1rem;
 }
 
 /* containers
 ****************/
 .divcenter{
   text-align: center;
+  padding:1rem;
 }
 
 .imgContainer{
@@ -19,11 +26,31 @@ h2{
 /* buttons 
 **************/
 .nextbtn_left{
-  width:100px;
+  width:300px;
   left:1rem;
   margin-bottom: 1px;
   background-color: transparent;
   color: #000;
   font-family: "Arial Black", Gadget, sans-serif;
   font-size: 20px;
+}
+
+.nextbtn_right{ 
+  position: absolute;
+  width:400px;
+  right:1rem;
+  background-color: transparent;
+  color: #000;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 20px;
+}
+
+/*tables
+*****************/
+th{
+  padding:10px;
+}
+td{
+  text-align: center;
+  padding: 10px;
 }
