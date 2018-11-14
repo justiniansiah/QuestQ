@@ -1,14 +1,37 @@
-/* Motivation Local CSS */
+/* Project Description Local CSS */
 
 /*headers
 *****************/
 h2{
 }
 
+p{
+  font-size: 20px;
+}
+
+li{
+  font-size: 20px;
+}
+
 /* containers
 ****************/
 .divcenter{
   text-align: center;
+}
+
+.text{
+  text-align: justify;
+  padding-top: 1rem;
+  width: 50%;
+  margin:auto;
+}
+
+.keyqn{
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: left;
 }
 
 .imgContainer{
@@ -19,7 +42,7 @@ h2{
 /* buttons 
 **************/
 .nextbtn_left{
-  width:100px;
+  width:300px;
   left:1rem;
   margin-bottom: 1px;
   background-color: transparent;
