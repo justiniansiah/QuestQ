@@ -4,25 +4,11 @@
 library(rstream)
 
 ## parameters system
-arrival0 = 80     #mean arrival times of customers (non-peak)
+arrival0 = 90     #mean arrival times of customers (non-peak)
 arrival1 = 45     #mean arrival times of customers (peak)
 service = 45      #mean service times of counter
 
-## simple generator for Poisson distribution (non CRN, testing if this works)
-randpoisson <- function (lambda) {
-  X <- 0
-  sum <- exp(-lambda)
-  prod <- exp(-lambda)
-  U <- runif(1)
-  while (U > sum) {
-    X <- X + 1
-    prod <- prod * lambda / X
-    sum <- sum + prod
-  }
-  return (X)
-}
-
-## Poisson didn't work so I'm trying out exponential
+## Poisson didn't work so I'm trying out exponential (non CRN, testing if this works)
 randexpo <- function (lambda) {
   U <- runif(1,0,1)
   X <- -lambda*log(1-U)
@@ -32,21 +18,21 @@ randexpo <- function (lambda) {
 
 
 ## Simulate 1 run to obtain mean queue length (and hopefully later on mean waiting time)
-simulateOneRun <- function () {
+simulateOneRun <- function (QueueStart,Runtime,Interarrivals) {
   CurrentTime = 0
-  QueueLength = 0
+  QueueLength = QueueStart
   TotalCustomers = 0 #total customers served
-  mean.Q = 0
+  mean.Q = QueueStart
   var.Q = 0
   
   arrival.flag = 0 #1 when system is waiting for customer, 0 otherwise
   service.flag = 0 #1 when system is processing a customer, 0 otherwise
   
   #First run to initialise queue, here we simulate 1130hrs - 1200hrs
-  while (CurrentTime < 30*60) {   
+  while (CurrentTime < Runtime*60) {   
     #See time which first customer arrives
     if (arrival.flag == 0){   
-      TimetoCustomer = randexpo(arrival0)
+      TimetoCustomer = randexpo(Interarrivals)
       arrival.flag = 1
     }
     #Add customer to queue if customer arrives
@@ -98,9 +84,14 @@ simulateOneRun <- function () {
   #return(TotalCustomers)
 }
 
+simulatePeak <- function(){
+  InitialQueue = round(simulateOneRun(0,30,arrival0)) #Initialise Queue length by running 1 simulation (non-peak, 30mins)
+  return(simulateOneRun(InitialQueue,45,arrival1))    #Use queue length to start off peak simulation (45mins)
+}
 
 
-result.diff <- replicate(100,simulateOneRun())
+
+result.diff <- replicate(100,simulatePeak())
 round(result.diff)
 ci.diff.rng <- t.test(result.diff,conf.level=0.95)$conf.int
 print(ci.diff.rng)
