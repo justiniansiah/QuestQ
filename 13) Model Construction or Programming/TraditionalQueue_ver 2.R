@@ -123,7 +123,7 @@ simulatePeak <- function(){
 #3 for Avg Waiting Time
 
 #Conduct multiple replications of the simulations
-results <- replicate(10000,simulatePeak())
+results <- replicate(100,simulatePeak())
 
 #display whole numbers for visual viewing.
 message("Average Queue Lengths")
