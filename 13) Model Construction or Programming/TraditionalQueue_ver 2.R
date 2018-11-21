@@ -108,8 +108,8 @@ simulateOneRun <- function (QueueStart,Runtime,Interarrivals) {
   AvgWait = sum(WaitTime)/TotalCustomers
   
   #Returns Avg Q Length, Current Q Length, Avg Waiting Time
-  return(StartTime)
-  #return(c(mean.Q,QueueLength,AvgWait))
+  #return(StartTime)
+  return(c(mean.Q,QueueLength,AvgWait))
   #return(TotalCustomers)
 }
 
@@ -123,7 +123,7 @@ simulatePeak <- function(){
 #3 for Avg Waiting Time
 
 #Conduct multiple replications of the simulations
-results <- replicate(100,simulatePeak())
+results <- replicate(10000,simulatePeak())
 
 #display whole numbers for visual viewing.
 message("Average Queue Lengths")
