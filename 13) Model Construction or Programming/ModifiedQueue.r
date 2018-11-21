@@ -28,14 +28,15 @@ randnorm <- function (mean = 0,var = 1, min = -Inf) {
 ## Simulate 1 run to obtain mean queue length (and hopefully later on mean waiting time)
 simulateOneRun <- function (QueueStart,Runtime,Interarrivals){ 
   QueueStart_track = QueueStart #to keep track of people in queue on start
+  Queue_track = 1 #keep track new entries to queue
   CurrentTime = 0
   QueueLength = QueueStart
   TotalCustomers = 0 #total customers served
   mean.Q = QueueStart
   var.Q = 0
   
-  StartTime = rep(0,1e3)
-  WaitTime = rep(0,1e3)
+  StartTime = rep(0,1e2)
+  WaitTime = rep(0,1e2)
   
   
   arrival.flag = 0 #1 when system is waiting for customer, 0 otherwise
@@ -54,7 +55,8 @@ simulateOneRun <- function (QueueStart,Runtime,Interarrivals){
       arrival.flag = 0               #Reset flag so check for next customer on next cycle
       
       
-      StartTime[TotalCustomers+1] = CurrentTime #Add in the current time to the list (for avg wait time calc)
+      StartTime[Queue_track] = CurrentTime #Add in the current time to the list (for avg wait time calc)
+      Queue_track = Queue_track + 1
       
       #This is to allow for multiple customers to come at once (this keeps time the same as we increment this at the end)
       #If no customer come immediately (ie TimetoCustomer =/= 0 then the simulation proceeds as usual)
@@ -117,6 +119,7 @@ simulateOneRun <- function (QueueStart,Runtime,Interarrivals){
   
   #Returns Avg Q Length, Current Q Length, Avg Waiting Time
   return(c(mean.Q,QueueLength,AvgWait))
+  #return(WaitTime)
   #return(TotalCustomers)
 }
 
