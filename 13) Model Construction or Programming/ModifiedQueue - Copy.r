@@ -14,11 +14,19 @@ randexpo <- function (lambda) {
   X <- -lambda*log(1-U)
   
   return(round(X))
-  }
+}
+
+## Generates a random variable based on the mean and variance
+#takes in mean, var and minimum values with default being std norm and no minimum
+randnorm <- function (mean = 0,var = 1, min = -Inf) {
+  sd = sqrt(var)
+  out = max(min,rnorm(1,mean,sd))
+  out
+}
 
 
 ## Simulate 1 run to obtain mean queue length (and hopefully later on mean waiting time)
-simulateOneRun <- function (QueueStart,Runtime,Interarrivals) {
+simulateOneRun <- function (QueueStart,Runtime,Interarrivals){ 
   QueueStart_track = QueueStart #to keep track of people in queue on start
   CurrentTime = 0
   QueueLength = QueueStart
@@ -26,14 +34,13 @@ simulateOneRun <- function (QueueStart,Runtime,Interarrivals) {
   mean.Q = QueueStart
   var.Q = 0
   
-  StartTime = c()
-  WaitTime = c()
+  StartTime = rep(0,1e3)
+  WaitTime = rep(0,1e3)
   
   
   arrival.flag = 0 #1 when system is waiting for customer, 0 otherwise
   service.flag = 0 #1 when system is processing a customer, 0 otherwise
   
-  #First run to initialise queue, here we simulate 1130hrs - 1200hrs
   while (CurrentTime < Runtime*60) {   
     #See time which first customer arrives
     if (arrival.flag == 0){   
@@ -46,8 +53,8 @@ simulateOneRun <- function (QueueStart,Runtime,Interarrivals) {
       QueueLength = QueueLength + 1  #For Average Queue Length Calculations, this value will go up and down
       arrival.flag = 0               #Reset flag so check for next customer on next cycle
       
-
-      StartTime = append(StartTime,CurrentTime) #Add in the current time to the list (for avg wait time calc)
+      
+      StartTime[TotalCustomers+1] = CurrentTime #Add in the current time to the list (for avg wait time calc)
       
       #This is to allow for multiple customers to come at once (this keeps time the same as we increment this at the end)
       #If no customer come immediately (ie TimetoCustomer =/= 0 then the simulation proceeds as usual)
@@ -79,13 +86,14 @@ simulateOneRun <- function (QueueStart,Runtime,Interarrivals) {
           
           #Here we use the time in the list "StartTime"
           #We take the (current time - time stored) and put it into "WaitTime"
-          #If there people in the queue on initialisation, we ignore them 
+          #If there people in the queue on initialisation, we ignore them
           if(QueueStart_track>0){
             QueueStart_track = QueueStart_track - 1
           }
           else{
-            WaitTime = append(WaitTime,(CurrentTime - StartTime[TotalCustomers-QueueStart]))
+            WaitTime[TotalCustomers-QueueStart] = (CurrentTime - StartTime[TotalCustomers-QueueStart])
           }
+          
         }
         #if not done, decrease time till complete
         else{
@@ -102,14 +110,13 @@ simulateOneRun <- function (QueueStart,Runtime,Interarrivals) {
     }
     
     CurrentTime = CurrentTime + 1
-
+    
   }
   #Before we return, we calculate the mean of the waiting times for this simulation
-  AvgWait = sum(WaitTime)/TotalCustomers
+  AvgWait = sum(WaitTime)/(TotalCustomers-QueueStart)
   
   #Returns Avg Q Length, Current Q Length, Avg Waiting Time
-  return(StartTime)
-  #return(c(mean.Q,QueueLength,AvgWait))
+  return(c(mean.Q,QueueLength,AvgWait))
   #return(TotalCustomers)
 }
 
