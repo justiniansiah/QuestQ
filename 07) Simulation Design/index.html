@@ -25,25 +25,40 @@
 		<script src="ActionProject00.js"></script>
 		<script src="../static/jquery-easyui/jquery.min.js"></script>
 		<script src="../static/jquery-easyui/jquery.easyui.min.js"></script>
+		<script src="localscript.js"></script>
 	</head>
 
 	<body>
 		<button	type="button" class="btn-left nextbtn_left" onClick="location.href='../index.html'"><span>Back</span></button>
 
 		<div class = "divcenter">
-			<!-- What is the name of this folder? -->
-			<h2>Simulation Design</h2>
+			<h1>Simulation Design</h1>
+			<br />
+		</div>
 
-			<table align="center">
-			<!-- Add header row -->
-			<tr>
-				<th>Link</th>
-				<th>Description</th>
-			</tr>
-			<!-- Add rows with <tr> tag. Be sure to close with </tr> tag -->
-				
-			</table>
+		<div class="tab">
+  			<button class="tablinks" onclick="openTab(event, 'CustomerSD')" id="defaultOpen"><b>Customer State Diagram</b></button>
+ 			<button class="tablinks" onclick="openTab(event, 'ShopSD')"><b>Shop State Diagram</b></button>
+  			<button class="tablinks" onclick="openTab(event, 'CodeFD')"><b>Code Flow Diagram</b></button>
+		</div>
 
+		<!-- Tab content -->
+		<div id="CustomerSD" class="tabcontent divcenter">
+		  <h3>Customer State Diagram</h3>
+		  <p>This shows the point different states from the customer's point of view.</p>
+		  <img src="SD_Customer.png" width = 50% style="padding:1rem;">
+		</div>
+
+		<div id="ShopSD" class="tabcontent divcenter">
+		  <h3>Shop State Diagram</h3>
+		  <p>This shows the different states of the shop.</p> 
+		  <p>The top diagram shows the states for the traditional queue while the bottom diagram shows the states for the modified queue.</p> 
+		  <img src="SD_Shop.png" width = 50% style="padding:1rem;">
+		</div>
+
+		<div id="CodeFD" class="tabcontent divcenter">
+		  <h3>Code Flow Diagram</h3>
+		  <p>To be created.</p>
 		</div>
 
 	</body>
