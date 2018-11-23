@@ -1,14 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
-	<style>
-		table {border-collapse: collapse;}
-		th {border: 1px solid black;padding:5px;text-align:center;}
-		td {border: 1px solid black;padding:5px;text-align:left;}
-	</style> 
-
-	<head>
-		<!-- Add a suitable title for this page -->
-		<title>Decision Rules</title>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Decision Rules</title>
 
 		<meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,31 +20,35 @@
 		<script src="ActionProject00.js"></script>
 		<script src="../static/jquery-easyui/jquery.min.js"></script>
 		<script src="../static/jquery-easyui/jquery.easyui.min.js"></script>
-	</head>
 
-	<body>
-		<button	type="button" class="btn-left nextbtn_left" onClick="location.href='../index.html'"><span>Back to Contents</span></button>
 
-		<button	type="button" class="btn-right nextbtn_right" id="conceptselection_btn" onClick="location.href='../03) Motivation/index.html'"><span>Motivation</span></button>
+    <style type="text/css">
+	html
+	{
+	 overflow: auto;
+	}
 
-		<div style="margin:1rem;"></div>
+	html, body, div, iframe
+	{
+	 margin: 0px;
+	 padding: 0px;
+	 height: 100%;
+	 border: none;
+	}
 
-		<div class = "divcenter">
-			<!-- What is the name of this folder? -->
-			<h1>Decision Rules</h1>						
-				<div class = "Rules">		
-					<p>
-					<b>Design rules for simulation modelling and analysis:</b> <br />
-					<ul style="list-style-type:disc">
-						<li>Customers who join queues always makes an order. In reality, there is a small occurence of custoemrs that leave queues before making orders. In data collection, these observations are voided, and will not be accunted fo. As such, in simulation design the probability distribution of customers leaving prematurely are not modelled.</li>
-						<li>Service times by cashiers are modelled as fixed values although there is some variation in reality especially during non peak hours. However, based on our observations, service times of cashiers during peak hours remain relatively constant.</li>
-						<li>Despite preperation times for different items served by a food stall being differet, we assume that various items sold by one stall follow a singular service time distribution for the sake of reducing model complexity</li>
-						<li>Cooking operations remain unchanged despite modelling the queueing system differently.</li>
-					</ul>
-					</p>
-				</div>										
-			</div>
-		</div>
+	iframe
+	{
+	 display: block;
+	 width: 100%;
+	 border: none;
+	 overflow-y: auto;
+	 overflow-x: hidden;
+	}
+	</style>
+  </head>
 
-	</body>
+  <body>
+    <button	type="button" class="btn-left nextbtn_left" onClick="location.href='../index.html'"><span>Back</span></button>
+	<iframe id="iframepdf" name="myiframe" width="100%" height="100%" src="decision rules.pdf" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+  </body>
 </html>
