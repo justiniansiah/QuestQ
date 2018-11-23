@@ -1,0 +1,31 @@
+
+\documentclass{article}
+\usepackage{pagecolor}
+\definecolor{ultramarine}{RGB}{254, 250, 214} 
+
+\usepackage[showframe]{geometry}
+%\usepackage{layout}
+\setlength{\voffset}{-0.75in}
+\setlength{\headsep}{5pt}
+\begin{document}
+\pagecolor{ultramarine}
+\title{Parameter Estimation}
+\author{}
+\date{}
+\maketitle
+\section{Initial Model}
+The following population parameters were estimated by collecting queuing
+behavior data and modeling parameter distributions:
+\begin{itemize}
+    \item Non-Peak Inter-arrival time, $\lambda = \exp(90)$
+    \item Peak Inter-arrival time, $\lambda = \exp(45)$
+    \item Fixed Service time, $\mu = 45$ seconds
+\end{itemize}
+\section{Alternative Model}
+\begin{itemize}
+    \item Non-Peak Inter-arrival time, $\lambda = \exp(90)$
+    \item Peak Inter-arrival time, $\lambda = \exp(45)$
+    \item Payment time, $\mu_p = 20$ seconds
+    \item Food Preparation time, $\mu_f = N(20,10), min=10$ seconds
+\end{itemize}
+\end{document}
