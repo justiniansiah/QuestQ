@@ -1,14 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
-	<style>
-		table {border-collapse: collapse;}
-		th {border: 1px solid black;padding:5px;text-align:center;}
-		td {border: 1px solid black;padding:5px;text-align:left;}
-	</style> 
-
-	<head>
-		<!-- Add a suitable title for this page -->
-		<title>Experimental Design</title>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Experimental Design</title>
 
 		<meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,58 +20,35 @@
 		<script src="ActionProject00.js"></script>
 		<script src="../static/jquery-easyui/jquery.min.js"></script>
 		<script src="../static/jquery-easyui/jquery.easyui.min.js"></script>
-	</head>
 
-	<body>
-		<button	type="button" class="btn-left nextbtn_left" onClick="location.href='../index.html'"><span>Back to Contents</span></button>
 
-		<button	type="button" class="btn-right nextbtn_right" id="conceptselection_btn" onClick="location.href='../03) Motivation/index.html'"><span>Motivation</span></button>
+    <style type="text/css">
+	html
+	{
+	 overflow: auto;
+	}
 
-		<div style="margin:1rem;"></div>
+	html, body, div, iframe
+	{
+	 margin: 0px;
+	 padding: 0px;
+	 height: 100%;
+	 border: none;
+	}
 
-		<div class = "divcenter">
-			<!-- What is the name of this folder? -->
-			<h1>Experimental Design</h1>						
-				<div class = "Experimental_Rules">		
-					<p>
-					<b>Key questions</b> <br />
-					<ul style="list-style-type:disc">
-						<li>
-							For a common arrival and service probability, which system configuration minimizes queue length and average waiting time per customer?
+	iframe
+	{
+	 display: block;
+	 width: 100%;
+	 border: none;
+	 overflow-y: auto;
+	 overflow-x: hidden;
+	}
+	</style>
+  </head>
 
-							By subjecting the alternative systems to identical experimental
-							conditions, we hope to make it easy to distinguish which systems
-							are best even though the respective estimators have sampling
-							error.
-						</li>
-					</ul>
-					<b>Sensitivity Analysis</b> <br />
-					<ul style="list-style-type:disc">
-						<li>
-							?
-						</li>
-					</ul>
-					<b>Simulation run structure</b> <br />
-					<ul style="list-style-type:disc">
-						<li>
-							The problem is a comparison of average waiting per customer between two queueing configurations. 
-							As such, we take the sample means of the desired simulation output from each system configuration, and identify a confidence interval that establish the difference between the sample means of each configuration.
-							
-							The smaller the sample mean, the better. As such, if the interval lies to the left of the center of the standardized distribution then the first system is better, and if the the interval lies to the right then the alternative system is better. If the interval contains zero, then the performance of both systems are statistically, about the same.
-						</li>
-					</ul>
-					<b>Simulation run duation</b> <br />
-					<ul style="list-style-type:disc">
-						<li>
-							The problem is time constrained as the scope of the project is limited to analysing queuing behavior comparisons during peak periods. As such, the termination sequence for each run in both simulation models (Initial and alternative queing system) is conditional on the number of timesteps. (ie., if the each simulation run ends after the time steps are at equal to or greater than the number of time steps that represent a 45 minute time period).
-							
-							The replication sequence of each run terminates after 10,000 iterations. (?)
-						</li>
-					</ul>
-					</p>
-				</div>										
-			</div>
-		</div>
-
-	</body>
+  <body>
+    <button	type="button" class="btn-left nextbtn_left" onClick="location.href='../index.html'"><span>Back</span></button>
+	<iframe id="iframepdf" name="myiframe" width="100%" height="100%" src="exdesign.pdf" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+  </body>
 </html>
