@@ -1,0 +1,33 @@
+
+\documentclass{article}
+\usepackage{pagecolor}
+\definecolor{ultramarine}{RGB}{254, 250, 214} 
+\begin{document}
+\pagecolor{ultramarine}
+\title{Mathematical Modelling}
+\author{QuestQ}
+\date{}
+\maketitle
+\section*{Initial model \& Proposed alternative model}
+In both inital and alternative models we tracked the following population parameters:
+\begin{enumerate}
+    \item Arrival times of customers entering the system. The arrival time of the $i$th customer is denoted by $A_i$.
+    \item Departure times of customers leaving queuing system after collecting order. The departure time of the $i$th customer is denoted by $D_i$.
+    \item Service times for customers in the system. The service time for the $i$th customer is given by $S_i$.
+    \item Total number of customers that have entered/left the system is denoted by $n$. (Note: We do not account for customers leaving the system, without making an order hence the total number of arrivals = total number of departures)
+\end{enumerate}
+From the above, we derived the following:
+\begin{enumerate}
+    \item Inter-arrival times between customers entering the queuing system. The $j$th inter-arrival time is given by: \[A_i-A_{i-1}\]
+    \item Inter-departure time between customers leaving the system. The $j$th inter-departure time is given by: \[D_i-D_{i-1}\]
+    \item Total waiting time since entering the system, till customers depart from their system after collecting an order. 
+    The total waiting time of the $i$th customer is given by: \[D_i-A_i\]
+    \item Total waiting time prior to making an order for the $i$th customer:
+    \[D_i-A_i-S_i\]
+    \item The total waiting time for all customers: \[\sum_i^n D_i-A_i\]
+    \item Average waiting, during the 45 minute peak period:
+    \[\frac{\sum_i^n D_i-A_i}{n}\]
+    \item Rate of change in queue length (Expected number of people in the queue):
+    \[\frac{dD}{dt}-\frac{dA}{dt}\]
+\end{enumerate}
+\end{document}
