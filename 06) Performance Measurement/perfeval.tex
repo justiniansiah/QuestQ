@@ -1,0 +1,19 @@
+
+\documentclass{article}
+\usepackage{pagecolor}
+\definecolor{ultramarine}{RGB}{254, 250, 214} 
+\usepackage[showframe]{geometry}
+%\usepackage{layout}
+\setlength{\voffset}{-0.75in}
+\setlength{\headsep}{5pt}
+\begin{document}
+\pagecolor{ultramarine}
+\title{Performance Measurement}
+\author{}
+\date{}
+\maketitle
+\section{Chosen performance measure}
+$\mu_i=$ Expected average wait time in queue for alternative for one customer. 
+\section{Initial condition}
+Samples of data for a period of time prior to the peak period were recorded (ie., The initialization duration of a peak period from 12pm to 1pm would be 11:30am to 12pm). The number of people in queue at a food stall at the end of this initialization period would set the initialization condition of the queue at the start of the peak period. Therefore by modelling the distribution of the arrival rate prior to the peak period, we can also obtain an accurate distribution for the number of people in queue at the start of the peak period simulation. This distribution would thus be the initialization condition for each simulation run in the experiment.
+\end{document}
