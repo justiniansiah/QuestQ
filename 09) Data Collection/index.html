@@ -25,6 +25,7 @@
 		<script src="ActionProject00.js"></script>
 		<script src="../static/jquery-easyui/jquery.min.js"></script>
 		<script src="../static/jquery-easyui/jquery.easyui.min.js"></script>
+		<script src="localscript.js"></script>
 	</head>
 
 	<body>
@@ -38,6 +39,7 @@
 		<!--<div class = "divcenter">
 			<iframe src="file:dataset_final_2">
 		</div>-->
+
 		<div class ="divmiddle">
 			<!-- Intro and Explanation -->
 			<p class="pjust">
@@ -46,38 +48,50 @@
 			<p class="pjust">
 				To help in our data collection, we created an interactive tool using VBA which will track the time of arrival and departures of customers and automatically calculate the interarrival times of each observation.
 			</p>
-
-			<!-- VBA Tool UI -->
-			<div style="width:image width px; font-size:80%; text-align:center; padding-top: 5px;">
-				<img src="test.jpg" alt="Screenshot of VBA tool" width="width" height="height" style="padding-bottom:0.2rem;">
-				<p>Figure 1.</p>
-			</div>
-			<p>
-				The left button
-			</p>
-
-			<!-- VBA Code -->
-			<div style="width:image width px; font-size:80%; text-align:center; padding-top: 5px;">
-				<img src="test.jpg" alt="Screenshot of VBA tool" width="width" height="height" style="padding-bottom:0.2rem;">
-				<p>Figure 2.</p>
-			</div>
-			<p>
-				The code behind it
-			</p>
-
-			<!-- Samples of Data -->
-			<div style="width:image width px; font-size:80%; text-align:center; padding-top: 5px;">
-				<img src="test.jpg" alt="Screenshot of VBA tool" width="width" height="height" style="padding-bottom:0.2rem;">
-				<p>Figure 3.</p>
-			</div>
-			<p>
-				The left button
-			</p>
-
-			<p>
+			<p class="pjust">
 				We will intepret the data in the next section (Data Visualization and Analysis).
 			</p>
+		</div>
 
+		<div class = "divtabs">
+			<!-- Tab Header -->
+			<div class="tab">
+	  			<button class="tablinks" onclick="openTab(event, 'VBAToolUI')" id="defaultOpen"><b>VBA Tool UI</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'VBACode')"><b>VBA Code</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'SampleData')"><b>Samples of Data Collected</b></button>
+			</div>
+
+			<!-- Tab content -->
+			<div id="VBAToolUI" class="tabcontent divcenter">
+			  <h3>VBA Tool UI</h3>
+
+			  <!-- VBA Tool UI -->
+				<img src="UI_color.png" alt="Screenshot of VBA tool" width="100%" height="height" border=1; style="padding-bottom:0.2rem;"  >
+				<p>
+					The left button
+				</p>
+			</div>
+
+			<div id="VBACode" class="tabcontent divcenter">
+			  <h3>VBA Code</h3>
+			  <!-- VBA Code -->
+				<img src="test.jpg" alt="Screenshot of VBA Code" width="50%" height="height" style="padding-bottom:0.2rem;">
+
+				<p>
+					The code behind it.
+				</p>
+
+			</div>
+
+			<div id="SampleData" class="tabcontent divcenter">
+			  <h3>Samples of Data Collected</h3>
+
+			  <!-- Samples of Data -->
+				<img src="data.png" alt="Screenshot of Collected Data" width="90%" height="height" style="padding-bottom:0.2rem;">
+				<p>
+					Samples of data.
+				</p>
+			</div>
 		</div>
 
 	</body>
