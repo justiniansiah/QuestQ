@@ -8,7 +8,7 @@
 
 	<head>
 		<!-- Add a suitable title for this page -->
-		<title>Data Visualization and Analysis</title>
+		<title>Data Vizualisation and Analysis</title>
 
 		<meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,24 +25,86 @@
 		<script src="ActionProject00.js"></script>
 		<script src="../static/jquery-easyui/jquery.min.js"></script>
 		<script src="../static/jquery-easyui/jquery.easyui.min.js"></script>
+		<script src="localscript.js"></script>
 	</head>
 
 	<body>
-		<button	type="button" class="btn-left nextbtn_left" onClick="location.href='../index.html'"><span>Back</span></button>
+		<button	type="button" class="btn-left nextbtn_left" onClick="location.href='../index.html'"><span>Back to Contents</span></button>
+		<button	type="button" class="btn-right nextbtn_right" onClick="location.href='../10) Data Visualization and Analysis/index.html'"><span>Data Visualization and Analysis</span></button>
 
 		<div class = "divcenter">
-			<!-- What is the name of this folder? -->
-			<h2>Data Visualization and Analysis</h2>
+			<h1>Data Vizualisations and Analysis</h1>
+		</div>
 
-			<table align="center">
-			<!-- Add header row -->
-			<tr>
-				<th>Link</th>
-				<th>Description</th>
-			</tr>
-			<!-- Add rows with <tr> tag. Be sure to close with </tr> tag -->
+		<!--<div class = "divcenter">
+			<iframe src="file:dataset_final_2">
+		</div>-->
+
+		<div class ="divmiddle">
+			<!-- Intro and Explanation -->
+			<p class="pjust">
+				In this section, we visualize the examine the data collected over several peak periods in a calendar week. We assume that that the distibution of peak periods doesnt differ between different days. (ie., Thursday lunch peak period and Wednesday lunch peak period are the same.)
+			</p>
+			<p class="pjust">
+				Below, we visualize lead time, interarrival time, and queue length (# customers waiting in queue) statistics.
+			</p>
+		</div>
+
+		<div class = "divtabs">
+			<!-- Tab Header -->
+			<div class="tab">
+	  			<button class="tablinks" onclick="openTab(event, 'Lead Time')" id="defaultOpen"><b>Lead time</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'Interarrival Time')"><b>Interarrival Time</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'Queue Length')"><b>Samples of Data Collected</b></button>
+	  			</b></button>
+			</div>
+
+			<!-- Tab content -->
+			<div id="Lead Time" class="tabcontent divcenter">
+			  <h3>Lead Time</h3>
+
+			  <!-- VBA Tool UI -->
+			<div style="float: left; width: 50%">
+				<img src="img/leadtime1.png" alt="Lead time vs Customer number" width="90%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+			</div>
+			<div style="float: right; width: 50%">
+				<img src="img/leadtime2.png" alt="Screenshot of reset warning" width="100%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+			</div>
+
+			<div class="divmiddle" style="width: 80%;">
+				<p class="pjust">In the figure on the left we observe the change of lead time over the total number of customers during peak hours</p>
+				<p class="pjust">In the figure on the right, we observe the distribution
+				of all lead time observations collected.</p>
+			</div>
+
 				
-			</table>
+			</div>
+
+			<div id="Interarrival Time" class="tabcontent divcenter">
+			  <h3>Interarrrival Time</h3>
+				<!-- VBA Code -->
+				<div style="float: left; width: 50%">
+				<img src="img/inter1.png" alt="Lead time vs Customer number" width="90%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+				</div>
+				<div style="float: right; width: 50%">
+					<img src="img/inter2.png" alt="Screenshot of reset warning" width="100%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+				</div>
+
+				<p>On the left, we have interarrival times per peak period over the total number of customers. Each period can be differentiated by the second series which denotes the total number of customers in each period.</p>
+			 	<p>On the right, we have the interarrival time distributions for all peak periods.</p>
+				
+			</div>
+			<div id="Queue Length" class="tabcontent divcenter">
+			  <h3>Queue Length</h3>
+			  	<!-- VBA Code -->
+				<div style="float: left; width: 50%">
+				<img src="img/qlength1.png" alt="Lead time vs Customer number" width="90%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+				</div>
+				<div style="float: right; width: 50%">
+					<img src="img/qlength2.png" alt="Screenshot of reset warning" width="100%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+				</div>
+				<p>On the left, we have queue length per peak period over the total number of customers. Each period can be differentiated by the second series which denotes the total number of customers in each period.</p>
+			 	<p>On the right, we have the queue length distributions for all peak periods.</p>
 
 		</div>
 
