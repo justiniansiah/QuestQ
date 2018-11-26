@@ -66,31 +66,49 @@
 			  <h3>VBA Tool UI</h3>
 
 			  <!-- VBA Tool UI -->
-				<img src="UI_color.png" alt="Screenshot of VBA tool" width="100%" height="height" border=1; style="padding-bottom:0.2rem;"  >
-				<p>
-					The left button
-				</p>
+				<img src="UI.png" alt="Screenshot of VBA tool" width="90%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+
+				<div class="divmiddle" style="width: 80%;">
+					<p class="pjust">The user interface of the recording tool consists of 3 buttons and a display.</p>
+					<p class="pjust">The <b>left</b> button adds a customer to the back of the queue and records down the time which they enter.</p>
+					<p class="pjust">The <b>right button</b> removes the customer at the front of the queue and records down the time which they leave. In addition, it also calculates the time the customer spent in the queue based on the time which they arrive.</p>
+					<p class="pjust">The <b>reset</b> button clears the recorded information. It also has a confirmation warning to prevent accidental presses (shown below).</p>
+					<p class="pjust">The display shows the time which the recording starts (recorded when the add button is first pressed) and the elapsed time. It also shows the current customers in the queue and the total number of customers that has joined the queue since the start.</p>
+				</div>
+
+				<img src="reset.png" alt="Screenshot of reset warning" width="30%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 			</div>
 
 			<div id="VBACode" class="tabcontent divcenter">
 			  <h3>VBA Code</h3>
-			  <!-- VBA Code -->
-				<img src="test.jpg" alt="Screenshot of VBA Code" width="50%" height="height" style="padding-bottom:0.2rem;">
+				<!-- VBA Code -->
+				<p>This is the code for the VBA data collection tool.</p>
+			 	<p>The first image shows the code for the 3 buttons, which are on sheet 1.</p>
+				<img src="code1.png" alt="Screenshot of VBA Code part 1" width="40%" height="height" style="padding-bottom:0.5rem;">
 
-				<p>
-					The code behind it.
-				</p>
+				<p>The following module is called when the reset button is pressed, and the reset is confirmed.</p>
+				<img src="code2_reset.png" alt="Screenshot of VBA Code part 2" width="100%" height="height" style="padding-bottom:0.5rem;">
+
+				<p>Next up, is the module for the "add customer" button.</p>
+				<img src="code3_addcust1.png" alt="Screenshot of VBA Code part 3a" width="100%" height="height">
+				<img src="code3_addcust2.png" alt="Screenshot of VBA Code part 3b" width="100%" height="height" style="padding-bottom:0.5rem;">
+
+				<p>And finally, the module for the "leave queue" button.</p>
+				<img src="code4_rmvcust1.png" alt="Screenshot of VBA Code part 4a" width="100%" height="height">
+				<img src="code4_rmvcust2.png" alt="Screenshot of VBA Code part 4b" width="100%" height="height" style="padding-bottom:0.5rem;">
 
 			</div>
 
 			<div id="SampleData" class="tabcontent divcenter">
 			  <h3>Samples of Data Collected</h3>
 
+			  <div class="divmiddle" style="width: 80%;">
+			  	<p class="pjust">Here are some of the samples of data we collected. The full set of data are available in the excel files within the folder 09) Data Collection</p>
+			  </div>
+
 			  <!-- Samples of Data -->
-				<img src="data.png" alt="Screenshot of Collected Data" width="90%" height="height" style="padding-bottom:0.2rem;">
-				<p>
-					Samples of data.
-				</p>
+				<img src="data.png" alt="Screenshot of Collected Data" width="90%" height="height" style="margin-bottom:2rem;" border= 1px>
+				<img src="data2.png" alt="Screenshot of Collected Data" width="90%" height="height" style="padding-bottom:0.2rem;" border= 1px>
 			</div>
 		</div>
 
