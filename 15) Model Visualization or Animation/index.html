@@ -28,27 +28,47 @@
 	</head>
 
 	<body>
+		<!-- Buttons -->
 		<button	type="button" class="btn-left nextbtn_left" onClick="location.href='../13) Model Construction or Programming/index.html'"><span>Model Construction</span></button>		
 		<button	type="button" class="btn-right nextbtn_right" onClick="location.href='../16) Experimental Design/index.html'"><span>Experimental Design</span></button>
 		<br />
 		<button	type="button" class="btn-left nextbtn_left" onClick="location.href='../index.html'" style="margin: 0px;"><span>Back to Contents</span></button>
 		<hr style="border: 1px solid">
 
+		<!-- Title -->
 		<div class = "divcenter">
-			<!-- What is the name of this folder? -->
-			<h2>Model Visualization or Animation</h2>
-
-			<table align="center">
-			<!-- Add header row -->
-			<tr>
-				<th>Link</th>
-				<th>Description</th>
-			</tr>
-			<!-- Add rows with <tr> tag. Be sure to close with </tr> tag -->
-				
-			</table>
-
+			<h1>Model Visualization or Animation</h1>
 		</div>
+
+		<!-- Stuff -->
+		<div class = "divcenter">
+			<div style = "margin-top: 1rem; width:45%; float: left;">
+				<figure>
+					<img src="TraditionalQueue.gif" alt="GIF of Traditional Queue" width="85%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+					<figcaption><b>Traditional Queue</b></figcaption>
+				</figure>
+
+				<div class = "divmiddle" style = "margin-top: 1rem;">
+					<p>This animation shows how our normal queueing systems operates.</p>
+					<p>Arriving customers join the back of the queue; The front most customer places an order and pays, the storeowner then prepares the food and serves them before moving on to take the next customer's order. This system follows a traditional First-Come-First-Serve principle.</p>
+				</div>
+			</div>
+
+			<div style = "margin-top: 1rem; width:55%; float: right;">
+				<figure>	
+					<img src="AlternativeQueue.gif" alt="GIF of Alternative Queue" width="90%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px; margin-right:1rem; ">
+					<figcaption><b>Alternative Queue</b></figcaption>
+				</figure>
+
+				<div class = "divmiddle" style = "margin-top: 1rem; width: 75%;">
+					<p>This animation shows how our alternative queueing systems would operate.</p>
+					<p>Arriving customers join the back of the first(ordering) queue as per the traditional queue; The front most customer places an order and pays. <b>But,</b> they now proceed to join the second(waiting) queue, adjacent to the order queue and the store owner continues to take the next customer's order and payment. (FCFS)</p>
+					<p>Meanwhile, those in the waiting queue will be waitng as a second store owner prepare their food. The orders are processed in parallel and it due to the different times it takes to preparent different foods, the customers are served whenever their ordered food arrives. (If two or more customers order the same food, then it is FCFS based on who ordered first).</p>
+				</div>
+			</div>
+		</div>
+
+		<br /><br />
 
 	</body>
 </html>
