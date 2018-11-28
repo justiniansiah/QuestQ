@@ -7,7 +7,6 @@
 	</style> 
 
 	<head>
-		<!-- Add a suitable title for this page -->
 		<title>Data Vizualisation and Analysis</title>
 
 		<meta charset="utf-8">
@@ -29,16 +28,19 @@
 	</head>
 
 	<body>
+		<!-- Navigation Buttons -->
 		<button	type="button" class="btn-left nextbtn_left" onClick="location.href='../09) Data Collection/index.html'"><span>Data Collection</span></button>
 		<button	type="button" class="btn-right nextbtn_right" onClick="location.href='../11) Parameter Estimation/index.html'"><span>Parameter Estimation</span></button>
 		<Br />
 		<button	type="button" class="btn-left nextbtn_left" onClick="location.href='../index.html'" style="margin: 0px;"><span>Back to Contents</span></button>
 		<hr style="border: 1px solid">
 
+		<!-- Title -->
 		<div class = "divcenter">
 			<h1>Data Visualisations and Analysis</h1>
 		</div>
 
+		<!-- Stuff -->
 		<div class ="divmiddle">
 			<!-- Intro and Explanation -->
 			<p class="pjust">
@@ -52,13 +54,13 @@
 		<div class = "divtabs">
 			<!-- Tab Header -->
 			<div class="tab">
-	  			<button class="tablinks" onclick="openTab(event, 'Peak Lead Time')" id="defaultOpen"><b>Peak Lead Time</b></button>
-	  			<button class="tablinks" onclick="openTab(event, 'Peak Interarrival Time')"><b>Peak Interarrival Time</b></button>
-	  			<button class="tablinks" onclick="openTab(event, 'Peak Queue Length')"><b>Peak Queue Length</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'Peak Lead Time')" id="defaultOpen"><b>Peak <br> Lead Time</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'Peak Interarrival Time')"><b>Peak <br>Interarrival Time</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'Peak Queue Length')"><b>Peak <br>Queue Length</b></button>
 
-	  			<button class="tablinks" onclick="openTab(event, 'Non Peak Lead Time')"><b>Non Peak Lead Time</b></button>
-	  			<button class="tablinks" onclick="openTab(event, 'Non peak Interarrival Time')"><b>Non peak Interarrival Time</b></button>
-	  			<button class="tablinks" onclick="openTab(event, 'Non peak Queue Length')"><b>Non peak Queue Length</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'Non Peak Lead Time')"><b>Non-peak <br>Lead Time</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'Non peak Interarrival Time')"><b>Non-peak <br>Interarrival Time</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'Non peak Queue Length')"><b>Non-peak <br>Queue Length</b></button>
 	  			</b></button>
 			</div>
 
@@ -68,11 +70,11 @@
 
 			  <!-- Lead Time -->
 				<div style="float: left; width: 50%;">
-					<img src="img/peak_leadtime.png" alt="Lead time vs Customer number" width="90%" height="height" border=1; style="padding-bottom:0.5rem; padding:1px;">
+					<img src="img/peak_leadtime.png" alt="Lead time vs Customer number" width="95%" height="height" border=1; style="padding-bottom:0.5rem; padding:1px;">
 				</div>
 				
 				<div style="float: right; width: 50%;">
-					<img src="img/peak_leadtime_dist.png" alt="Lead time vs Customer number 2" width="100%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+					<img src="img/peak_leadtime_dist.png" alt="Lead time vs Customer number 2" width="99%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 				</div>
 
 				<div>&nbsp;</div>
@@ -98,11 +100,11 @@
 
 				<!-- Interarrival Time -->
 				<div style="float: left; width: 50%">
-				<img src="img/peak_ia.png" alt="Interarrival Time 1" width="90%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+				<img src="img/peak_ia.png" alt="Interarrival Time 1" width="95%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 				</div>
 
 				<div style="float: right; width: 50%">
-					<img src="img/peak_ia_dist.png" alt="Interarrival Time 2" width="100%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+					<img src="img/peak_ia_dist.png" alt="Interarrival Time 2" width="99%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 				</div>
 
 				<div>&nbsp;</div>
@@ -120,7 +122,7 @@
 			  	<!-- Queue Length -->
 
 				<div style="float: left; width: 50%">
-					<img src="img/peak_qlength.png" alt="Lead time vs Customer number" width="90%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+					<img src="img/peak_qlength.png" alt="Lead time vs Customer number" width="95%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 				</div>
 
 				<div style="float: right; width: 50%">
@@ -140,11 +142,11 @@
 
 			  	<!-- Lead Time -->
 				<div style="float: left; width: 50%;">
-					<img src="img/nonpeak_leadtime.png" alt="Lead time vs Customer number" width="90%" height="height" border=1; style="padding-bottom:0.5rem; padding:1px;">
+					<img src="img/nonpeak_leadtime.png" alt="Lead time vs Customer number" width="95%" height="height" border=1; style="padding-bottom:0.5rem; padding:1px;">
 				</div>
 				
 				<div style="float: right; width: 50%;">
-					<img src="img/nonpeak_leadtime_dist.png" alt="Lead time vs Customer number 2" width="100%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+					<img src="img/nonpeak_leadtime_dist.png" alt="Lead time vs Customer number 2" width="95%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 				</div>
 
 				<div>&nbsp;</div>
@@ -169,11 +171,11 @@
 
 				<!-- Interarrival Time -->
 				<div style="float: left; width: 50%">
-				<img src="img/nonpeak_ia.png" alt="Interarrival Time 1" width="90%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+				<img src="img/nonpeak_ia.png" alt="Interarrival Time 1" width="95%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 				</div>
 
 				<div style="float: right; width: 50%">
-					<img src="img/nonpeak_ia_dist.png" alt="Interarrival Time 2" width="100%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+					<img src="img/nonpeak_ia_dist.png" alt="Interarrival Time 2" width="95%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 				</div>
 
 				<div>&nbsp;</div>
@@ -191,11 +193,11 @@
 			  	<!-- Queue Length -->
 
 				<div style="float: left; width: 50%">
-					<img src="img/nonpeak_qlength.png" alt="Lead time vs Customer number" width="90%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+					<img src="img/nonpeak_qlength.png" alt="Lead time vs Customer number" width="95%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 				</div>
 
 				<div style="float: right; width: 50%">
-					<img src="img/nonpeak_qlength_dist.png" alt="Screenshot of reset warning" width="100%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+					<img src="img/nonpeak_qlength_dist.png" alt="Screenshot of reset warning" width="96%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 				</div>
 
 				<div>&nbsp;</div>

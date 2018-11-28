@@ -88,7 +88,10 @@ td{
 /* Style the buttons that are used to open the tab content */
 .tab button {
     background-color: inherit;
-    float: left;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width:16.3%;
     border: none;
     outline: none;
     cursor: pointer;
