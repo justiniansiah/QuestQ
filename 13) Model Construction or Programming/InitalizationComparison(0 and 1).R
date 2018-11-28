@@ -156,6 +156,9 @@ dosim <- function(iter=1){
 
 results = dosim(100)
 results
+
+CI01 <- t.test(results$diff,conf.level=0.95)$conf.int
+print(CI01)
 # plot(y = results, x=c(0:10)
 #      , main="Graph",
 #      type = "l",
