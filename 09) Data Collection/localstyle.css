@@ -41,6 +41,14 @@ h2{
   margin-left:100px;
 }
 
+iframe{
+ display: block;
+ width: 100%;
+ border: none;
+ overflow-y: auto;
+ overflow-x: hidden;
+  }
+
 /* buttons 
 **************/
 .nextbtn_left{
