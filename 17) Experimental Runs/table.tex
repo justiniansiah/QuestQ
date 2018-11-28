@@ -1,0 +1,37 @@
+
+\documentclass{article}
+\usepackage{pagecolor}
+\definecolor{ultramarine}{RGB}{254, 250, 214} 
+\begin{document}
+\pagecolor{ultramarine}
+\title{Experimental Runs}
+\author{QuestQ}
+\date{}
+\maketitle
+\section*{Initializing simulation}
+
+Let $X_{ij}$ denote the average waiting time of a customer where the initial queue length is $i$, through substring $j$. \newline
+\begin{tabular}{l*{6}{c}r}
+Run No.  & $SS_1$ & $SS_2$ & $\cdots$ & $SS_n$   \\
+\hline
+0 & $X_{0,1}$ & $X_{0,2}$ & $\cdots$ & $X_{0,n}$   \\
+1 & $X_{1,1}$ & $X_{1,2}$ & $\cdots$ & $X_{1,n}$   \\
+2 & $X_{2,1}$ & $X_{2,2}$ & $\cdots$ & $X_{2,n}$   \\
+\vdots & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$   \\
+10 & $X_{10,1}$ & $X_{10,2}$ & $\cdots$ & $X_{10,n}$   \\
+\end{tabular}
+\newline
+\newline
+\newline
+
+\begin{tabular}{l*{6}{c}r}
+Run No.  & $SS_1$ & $SS_2$ & $\cdots$ & $SS_n$ &    &  $E[X_{i}]$ \\
+\hline
+0 & $X_{0,1}$ & $X_{0,2}$ & $\cdots$ & $X_{0,n}$ & $\rightarrow$   & Avg$_0$ \\
+1 & $X_{1,1}$ & $X_{1,2}$ & $\cdots$ & $X_{1,n}$ & $\rightarrow$   & Avg$_1$  \\
+2 & $X_{2,1}$ & $X_{2,2}$ & $\cdots$ & $X_{2,n}$ & $\rightarrow$   & Avg$_2$  \\
+\vdots & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & \vdots   & \vdots  \\
+10 & $X_{10,1}$ & $X_{10,2}$ & $\cdots$ & $X_{10,n}$ & $\rightarrow$   & Avg$_10$  \\
+\end{tabular}
+
+\end{document}
