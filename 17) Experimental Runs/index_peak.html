@@ -62,7 +62,7 @@
 			  <h3>Simulated vs Observed Values</h3>
 
 				<figure>
-					<img src="img/lead_peak.png" alt="Graph of Avg Wait times (Simulated)" width="40%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+					<img src="img/lead_peak.png" alt="Graph of Avg Wait times (Simulated)" width="60%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 					<figcaption>Simulated Average Waiting Times</figcaption>
 				</figure>
 
@@ -96,7 +96,16 @@
 
 					<p class="pjust">As seen in the table above, the average time the customer spends in waiting increases when there are more people in the queue at the start of the peak period. This is to be expected as a longer starting queue would mean the server is more likely to run at full capacity as the peak crowd comes in.</p>
 					<p class="pjust">The graph is mostly linear with the exception of 0. This is also to be expected as the rate of service does not change and a larger initalization queue length would not doubt result in longer queues and by extension, longer waiting times.</p>
-					<p class="pjust">It is interesting to note that there is no observable difference in wait times between initial queue size of 0 and 1</p>
+					<p class="pjust">Since the values of queue size 0 and 1 looks about the same and there are some runs where in fact an initial queue length of 1 would yield a smaller average waiting time, we decided to do a t-test to confirm if there is any significant effect of having 0 or 1 as the initial queue length.</p>
+
+					<br />
+
+					<h3 style="text-decoration: underline;">T-test for Inital Queue Lengths of 0 and 1</h3>
+
+					<p class="pjust">We simulated 1000 iterations of queue length 0 and 1 with CRN and took the difference between the average waiting time (Q0-Q1). The data is saved in the csv <a href="Queue01Comparison.csv">here</a> the resulting confidence interval with &alpha; = 0.05:</p>
+					<p style="text-align: center; font-size: 20px; font-weight:bold; ">( -3.570022 , -1.194845 )</p>
+
+					<p class="pjust">Since 0 is not within the confidence interval, we can say with 95% confidence that the true difference will be negative, meaning that <b><u>initializing the queue with 0 will have a shorter average waiting time.</u></b>
 
 				</div>
 
@@ -109,7 +118,15 @@
 			  <h3>Alternative Queue</h3>
 
 			  <div class = "divmiddle" style = "margin-top: 1rem;">
-			  	<p>Here, we compare the traditional queue (Model 1) to the alternative queue system whereby the store serves order/payment and food processing seperately (Model 2). For each model, we run 100 independent simulations and take the average waiting time. For each corresponding simulation (ie M1_Sim1 vs M2_Sim1, M1_Sim10 vs M2_Sim10, etc.), the interarrival times for both models will be drawn from the same substream of random numbers for each corresponding simulation. Allowing us to compare the models with less varience.</p>
+			  	<p>Here, we compare the traditional queue (Model 1) to the alternative queue system whereby the store serves order/payment and food processing seperately (Model 2). For each model, we run 100 independent simulations and take the average waiting time. For each corresponding simulation (ie M1_Sim1 vs M2_Sim1, M1_Sim10 vs M2_Sim10, etc.), the interarrival times for both models will be drawn from the same substream of random numbers (using rstream) for each corresponding simulation. Allowing us to compare the models with less varience.</p>
+
+			  	<p>Each instance of each system is run with a clean slate for 30mins with the non-peak period interarrival distribution. The resulting queue lengths at the end of 30mins is then used to initalize second instance with the peak period interarrival distribution..</p> 
+
+			  	<p>We simulated 100 iterations of the two systems with CRN and took the difference between the average waiting time. The data is saved in the csv <a href="modelcomparison.csv">here</a> the resulting confidence interval with &alpha; = 0.05:</p>
+
+			  	<p style="text-align: center; font-size: 20px; font-weight:bold; ">( 239.5266 , 296.6334 )</p>
+
+			  	<p class="pjust">Since 0 is not within the confidence interval, we can say with 95% confidence that the true difference will be positive, meaning that <b><u>the alternative system is perferred as the original system has a higher average waiting time.</u></b>
 			  </div>
 			</div>
 			
