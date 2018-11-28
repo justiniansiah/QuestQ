@@ -8,8 +8,8 @@ library(rstream)
 gendemand <- new("rstream.mrg32k3a")
 
 ## parameters system
-arrival0 = 90     #mean arrival times of customers (non-peak)
-arrival1 = 45     #mean arrival times of customers (peak)
+arrival0 = 56     #mean arrival times of customers (non-peak)
+arrival1 = 43     #mean arrival times of customers (peak)
 service = 45      #mean service times of counter
 
 runtime = 45 #mins
@@ -22,6 +22,15 @@ randexpo <- function (lambda,rs) {
   X <- -lambda*log(1-U)
   
   return(round(X))
+}
+
+## Generates a random variable based on the mean and variance
+#takes in mean, var and minimum values with default being std norm and no minimum
+randnorm <- function (mean = 0,var = 1, min = -Inf) {
+  sd = sqrt(var)
+  out = max(min,rnorm(1,mean,sd))
+  out = min(out,180)
+  out
 }
 
 ## Simulate 1 run of Traditional Queue
@@ -74,6 +83,7 @@ simulateOneRun_T <- function (QueueStart,Runtime,Interarrivals) {
       if (service.flag == 0){
         service.flag = 1
         TimetoService = service #for fixed service times
+        TimetoService = round(randnorm(50,10,10)) #use normal dis instead
       }
       #else, system is serving a customer
       else{
@@ -161,7 +171,21 @@ dosim <- function(queue,iter=1){
 
 results = dosim(10,100)
 results
-plot(results, main="Graph",
-     type = "l",
-     xlab="Initial Queue Lengths", ylab="Average Waiting Times (s)",
-     xlim=c(0, 10))
+# plot(y = results, x=c(0:10)
+#      , main="Graph",
+#      type = "l",
+#      xlab="Initial Queue Lengths", ylab="Average Waiting Times (s)",
+#      xlim=c(0, 10))
+# text(x=c(0:10), y = results, round(results), cex=0.8)
+
+library(ggplot2)
+df <- data.frame(x=c(0:10),y=round(results))
+ggplot(data=df, aes(x=df$x,y=df$y)) +
+  scale_x_continuous(breaks = seq(0, 10, by = 1))+
+  geom_point()+
+  geom_line()+
+  geom_text(aes(label=df$y),size=4, position = position_nudge(y = 10))+
+  labs(x="\nInitial Queue Lengths", y="\nAverage Waiting Times (s)\n")+ 
+  theme_classic()
+
+

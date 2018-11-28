@@ -67,6 +67,7 @@ simulateOneRun <- function (QueueStart,Runtime,Interarrivals) {
       if (service.flag == 0){
         service.flag = 1
         TimetoService = service #for fixed service times
+        TimetoService = round(randnorm(50,10,10))
       }
       #else, system is serving a customer
       else{
