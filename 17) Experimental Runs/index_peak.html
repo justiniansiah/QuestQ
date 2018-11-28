@@ -62,7 +62,7 @@
 			  <h3>Simulated vs Observed Values</h3>
 
 				<figure>
-					<img src="img/lead_peak.png" alt="Graph of Avg Wait times (Simulated)" width="60%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+					<img src="img/lead_peak.png" alt="Graph of Avg Wait times (Simulated)" width="70%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 					<figcaption>Simulated Average Waiting Times</figcaption>
 				</figure>
 
@@ -78,17 +78,21 @@
 			  <div class = "divmiddle" style = "margin-top: 1rem;">
 			  	<p>Here, we varied the length of the initial queue (<i>n</i>), and ran our simulation with common random numbers to see how our average waiting time will be affected.</p>
 			  	<p>For this test, we used integers of 0 to 10 to initialise the queue for the simulation.</p> 
-			  	<!--<p>Each of the <i>n<sub>0</sub></i> to <i>n<sub>100</sub></i> uses different substreams from the R package. But, each <i>n</i> will use the same set of substreams. (eg.<i>1<sub>0</sub></i>, <i>2<sub>0</sub></i> , ... , <i>n<sub>0</sub></i> all draws from the same substring while <i>1<sub>100</sub></i>, <i>2<sub>100</sub></i> , ... , <i>n<sub>100</sub></i>) draws from another substring. This will allow us to compare the effects of having different initalization queue lengths by comparing their average waiting times.</p>-->
+
+			  	<div class = "divcenter">
+			  		<span>
+			  			<img src="img/table3.PNG" alt="Table 1" width="70%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+			  			<img src="img/table2.PNG" alt="Table 2" width="70%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
+			  		</span>
+			  	</div>
 			  	<ul>
-			  		<li>We used the RStream Package to get a stream of random numnbers. These were used to generate our interarrival times for the customers.</li>
+			  		<li>We used the RStream Package to get a stream of random numbers. These were used to generate our interarrival times for the customers.</li>
 			  		<li>We ran 1 instance of the simulation for each of the 11 queue lengths, resetting the substream each time (so that all instances will use the same substream)</li>
 			  		<li>Then we skipped to the next substream and reran another instance for the 11 queue lengths again. We repeated this process 100 times, obtaining queue time values for each length.</li>
 			  		<li>Finally we took the average values for each queue length across substreams and plotted those values against the queue length</li>
 			  	</ul>
-
-			  	<div class = "divcenter">
-			  		<p style="font-size:40px; "><b>Insert Table Here</b></p>
 			  	
+			  	<div class = "divcenter">
 				  	<figure>
 						<img src="img/QueueVSWait.PNG" alt="Graph of Avg Wait times against Initialization Q" width="70%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 						<figcaption>Graph of Avg Wait times against Initialization Queue Length</figcaption>
