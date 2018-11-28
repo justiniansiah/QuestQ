@@ -104,6 +104,7 @@
 
 					<p class="pjust">We simulated 1000 iterations of queue length 0 and 1 with CRN and took the difference between the average waiting time (Q0-Q1). The data is saved in the csv <a href="Queue01Comparison.csv">here</a> the resulting confidence interval with &alpha; = 0.05:</p>
 					<p style="text-align: center; font-size: 20px; font-weight:bold; ">( -3.570022 , -1.194845 )</p>
+
 					<p class="pjust">Since 0 is not within the confidence interval, we can say with 95% confidence that the true difference will be negative, meaning that <b><u>initializing the queue with 0 will have a shorter average waiting time.</u></b>
 
 				</div>
@@ -117,7 +118,15 @@
 			  <h3>Alternative Queue</h3>
 
 			  <div class = "divmiddle" style = "margin-top: 1rem;">
-			  	<p>Here, we compare the traditional queue (Model 1) to the alternative queue system whereby the store serves order/payment and food processing seperately (Model 2). For each model, we run 100 independent simulations and take the average waiting time. For each corresponding simulation (ie M1_Sim1 vs M2_Sim1, M1_Sim10 vs M2_Sim10, etc.), the interarrival times for both models will be drawn from the same substream of random numbers for each corresponding simulation. Allowing us to compare the models with less varience.</p>
+			  	<p>Here, we compare the traditional queue (Model 1) to the alternative queue system whereby the store serves order/payment and food processing seperately (Model 2). For each model, we run 100 independent simulations and take the average waiting time. For each corresponding simulation (ie M1_Sim1 vs M2_Sim1, M1_Sim10 vs M2_Sim10, etc.), the interarrival times for both models will be drawn from the same substream of random numbers (using rstream) for each corresponding simulation. Allowing us to compare the models with less varience.</p>
+
+			  	<p>Each instance of each system is run with a clean slate for 30mins with the non-peak period interarrival distribution. The resulting queue lengths at the end of 30mins is then used to initalize second instance with the peak period interarrival distribution..</p> 
+
+			  	<p>We simulated 100 iterations of the two systems with CRN and took the difference between the average waiting time. The data is saved in the csv <a href="modelcomparison.csv">here</a> the resulting confidence interval with &alpha; = 0.05:</p>
+
+			  	<p style="text-align: center; font-size: 20px; font-weight:bold; ">( 239.5266 , 296.6334 )</p>
+
+			  	<p class="pjust">Since 0 is not within the confidence interval, we can say with 95% confidence that the true difference will be positive, meaning that <b><u>the alternative system is perferred as the original system has a higher average waiting time.</u></b>
 			  </div>
 			</div>
 			

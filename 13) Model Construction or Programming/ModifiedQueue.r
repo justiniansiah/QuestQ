@@ -8,6 +8,7 @@ arrival0 = 56     #mean arrival times of customers (non-peak)
 arrival1 = 43     #mean arrival times of customers (peak)
 service_ordertime = 20      #Time taken to order/pay for food (fixed at 20s)
 
+Tradmean = 48
 foodmean = 20
 foodvar = 10
 foodmin = 10
@@ -94,7 +95,8 @@ simulateOneRun <- function (QueueStart_Order,QueueStart_Food,Runtime,Interarriva
       #If currently not serving a customer, serve next customer
       if (serviceorder.flag == 0){
         serviceorder.flag = 1
-        TimetoService_order = service_ordertime #for fixed service times
+        #TimetoService_order = service_ordertime #for fixed service times
+        TimetoService_order = round(randnorm(Tradmean,10,10))
       }
       #else, system is serving a customer
       else{

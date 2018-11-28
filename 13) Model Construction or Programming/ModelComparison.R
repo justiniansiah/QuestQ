@@ -11,6 +11,7 @@ gendemand <- new("rstream.mrg32k3a")
 arrival0 = 56    #mean arrival times of customers (non-peak)
 arrival1 = 43     #mean arrival times of customers (peak)
 service = 45      #mean service times of counter
+tradmean = 48
 
 service_ordertime = 20      #Time taken to order/pay for food (fixed at 20s)
 foodmean = 20
@@ -87,7 +88,8 @@ simulateOneRun_T <- function (QueueStart,Runtime,Interarrivals) {
       #If currently not serving a customer, serve next customer
       if (service.flag == 0){
         service.flag = 1
-        TimetoService = service #for fixed service times
+        #TimetoService = service #for fixed service times
+        TimetoService = round(randnorm(tradmean,10,10))
       }
       #else, system is serving a customer
       else{
@@ -307,14 +309,15 @@ dosim <- function(){
   #Conduct multiple replications of the simulations
   results <- replicate(100,simulateDiff())
   #display whole numbers for visual viewing.
-  round(results) 
-  
+  return(round(results) )
+}  
+dosim()
   #Calculate Conf Interval
   ci.diff.rng <- t.test(results,conf.level=0.95)$conf.int
   print(ci.diff.rng)
   mean(results)
-}
-dosim()
+
+
 
 
 
