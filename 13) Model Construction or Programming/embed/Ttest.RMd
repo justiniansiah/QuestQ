@@ -1,0 +1,12 @@
+---
+title: "T-Test"
+output: html_notebook
+---
+This is the code we used to run the t-tests. 
+Essentially, most of the work has been done by the previous functions and we just run the result through here to get the confidence intervals.
+
+```{r}
+
+CI01 <- t.test(results$diff,conf.level=0.95)$conf.int
+print(CI01)
+```

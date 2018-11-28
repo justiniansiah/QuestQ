@@ -1,10 +1,8 @@
 #Here we do a comparison for the average waiting times for different initial queue lengths
 
 ## load library
-if(!require(rstream)){
-  install.packages("rstream")
-  library(rstream)
-}
+library(rstream)
+
 ### Set Parameters ##########################
 ## initialize streams of random numbers
 gendemand <- new("rstream.mrg32k3a")
@@ -161,5 +159,21 @@ results
 
 CI01 <- t.test(results$diff,conf.level=0.95)$conf.int
 print(CI01)
+# plot(y = results, x=c(0:10)
+#      , main="Graph",
+#      type = "l",
+#      xlab="Initial Queue Lengths", ylab="Average Waiting Times (s)",
+#      xlim=c(0, 10))
+# text(x=c(0:10), y = results, round(results), cex=0.8)
+
+library(ggplot2)
+df <- data.frame(x=c(0:10),y=round(results))
+ggplot(data=df, aes(x=df$x,y=df$y)) +
+  scale_x_continuous(breaks = seq(0, 10, by = 1))+
+  geom_point()+
+  geom_line()+
+  geom_text(aes(label=df$y),size=4, position = position_nudge(y = 10))+
+  labs(x="\nInitial Queue Lengths", y="\nAverage Waiting Times (s)\n")+ 
+  theme_classic()
 
 

@@ -1,7 +1,10 @@
 #Here we generate the data for the traditional queue
 
 ## load library
-library(rstream)
+if(!require(rstream)){
+  install.packages("rstream")
+  library(rstream)
+}
 
 ### Set Parameters ##########################
 ## initialize streams of random numbers
@@ -130,10 +133,7 @@ simulateOneRun_T <- function (QueueStart,Runtime,Interarrivals) {
   #Before we return, we calculate the mean of the waiting times for this simulation
   AvgWait = sum(WaitTime)/TotalCustomers
   
-  #Returns Avg Q Length, Current Q Length, Avg Waiting Time
-  #return(StartTime)
   return(c(mean.Q,QueueLength,AvgWait))
-  #return(TotalCustomers)
 }
 
 
@@ -254,13 +254,6 @@ simulateOneRun_A <- function (QueueStart_Order,QueueStart_Food,Runtime,Interarri
     }
     
     
-    # #Update Queue Length statistics
-    # if (CurrentTime > 0){
-    #   new_mean.Q = mean.Q + (1/(CurrentTime)) * (QueueLength_Order - mean.Q)
-    #   if (CurrentTime>1){ var.Q = (1 - (1/(CurrentTime-1)) )*var.Q + CurrentTime*((new_mean.Q - mean.Q)^2)} #because 1 sample means var = 0
-    #   mean.Q = new_mean.Q
-    # }
-    
     CurrentTime = CurrentTime + 1
     
   }
@@ -274,10 +267,7 @@ simulateOneRun_A <- function (QueueStart_Order,QueueStart_Food,Runtime,Interarri
   }
   AvgWait = sum(WaitTime)/TotalCustomers
   
-  #Returns Avg Q Length, Current Q Length, Avg Waiting Time
-  #return(StartTime)
   return(c(QueueLength_Order,QueueLength_Food,AvgWait))
-  #return(TotalCustomers)
 }
 
 

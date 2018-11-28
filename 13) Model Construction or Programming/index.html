@@ -48,6 +48,7 @@
 			<p>We created a more in depth and rigourous model using R, and tested our values with the RStream library's Common Random Numbers feature. This allowed us to do our comparision with less varience due to the effect of random numbers.</p>
 			<p>The overarching design for the simulations are depicted previously with the Flow Diagram in <a href="../07) Simulation Design/index.html">Simulation Design</a>, but each code has its own purposes. 
 			<br />
+			The executable code are available <a href="./Run">in the folder</a> and they run in R. Results are discussed later on in <a href="../17) Experimental Runs/index.html">Experimental Runs</a>.
 		</div>
 
 		<!-- Tab Header -->
@@ -64,78 +65,32 @@
 			<!-- Tab content -->
 			<!-- 1 Common Functions -->
 			<div id="CommonFn" class="tabcontent divcenter">
-			  <!-- <h3>Common Functions</h3>-->
 				<iframe src="embed/commonfn.nb.html" style="height: 800px;"></iframe>
 			</div>
 
 			<!-- 2 Simulate Traditional Queue -->
 			<div id="Sys1" class="tabcontent divcenter">
-			  <h3>Simulate Traditional Queue</h3>
-
-				<figure>
-					<img src="img/lead_peak.png" alt="Graph of Avg Wait times (Simulated)" width="60%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
-					<figcaption>Simulated Average Waiting Times</figcaption>
-				</figure>
-
-			  	<div class = "divmiddle" style = "margin-top: 1rem;">
-			  		<p>Waiting time is the time the customer have to wait to received their food on joining the queue. Here, we compare the average waiting time from the simulation to our observed values.</p>
-			  	</div>
+			  <iframe src="embed/SimTrad.nb.html" style="height: 2200px;"></iframe>
 			</div>	
 
 			<!-- 3 Simulate Alternative Queue -->
 			<div id="Sys2" class="tabcontent divcenter">
-			  <h3>Simulate Alternative Queue</h3>
-
-				<figure>
-					<img src="img/lead_peak.png" alt="Graph of Avg Wait times (Simulated)" width="60%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
-					<figcaption>Simulated Average Waiting Times</figcaption>
-				</figure>
-
-			  	<div class = "divmiddle" style = "margin-top: 1rem;">
-			  		<p>Waiting time is the time the customer have to wait to received their food on joining the queue. Here, we compare the average waiting time from the simulation to our observed values.</p>
-			  	</div>
+				<iframe src="embed/SimAlt.nb.html" style="height: 3000px;"></iframe>
 			</div>
 
 			<!-- 4 Comparing Initialization Size -->
 			<div id="CompInit" class="tabcontent divcenter">
-			  <h3>Comparing Initialization Size</h3>
-
-				<figure>
-					<img src="img/lead_peak.png" alt="Graph of Avg Wait times (Simulated)" width="60%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
-					<figcaption>Simulated Average Waiting Times</figcaption>
-				</figure>
-
-			  	<div class = "divmiddle" style = "margin-top: 1rem;">
-			  		<p>Waiting time is the time the customer have to wait to received their food on joining the queue. Here, we compare the average waiting time from the simulation to our observed values.</p>
-			  	</div>
+				<iframe src="embed/InitComp.nb.html" style="height: 1600px;"></iframe>
 			</div>
 
 			<!-- 5 Comparing Models -->
 			<div id="1v2" class="tabcontent divcenter">
-			  <h3>Comparing Models</h3>
-
-				<figure>
-					<img src="img/lead_peak.png" alt="Graph of Avg Wait times (Simulated)" width="60%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
-					<figcaption>Simulated Average Waiting Times</figcaption>
-				</figure>
-
-			  	<div class = "divmiddle" style = "margin-top: 1rem;">
-			  		<p>Waiting time is the time the customer have to wait to received their food on joining the queue. Here, we compare the average waiting time from the simulation to our observed values.</p>
-			  	</div>
+				<iframe src="embed/ComparingModels.nb.html" style="height: 1000px;"></iframe>
 			</div>
 
 			<!-- 6 T-Test -->
 			<div id="ttest" class="tabcontent divcenter">
-			  <h3>T-test for Confidence Intervals</h3>
-
-				<figure>
-					<img src="img/lead_peak.png" alt="Graph of Avg Wait times (Simulated)" width="60%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
-					<figcaption>Simulated Average Waiting Times</figcaption>
-				</figure>
-
-			  	<div class = "divmiddle" style = "margin-top: 1rem;">
-			  		<p>Waiting time is the time the customer have to wait to received their food on joining the queue. Here, we compare the average waiting time from the simulation to our observed values.</p>
-			  	</div>
+				<iframe src="embed/Ttest.nb.html" style="height: 300px;"></iframe>
 			</div>
 
 		</div>

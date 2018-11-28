@@ -1,0 +1,46 @@
+---
+title: "Comparing Models"
+output: html_notebook
+---
+This function is used to simulate both models together using Common Random Numbers. 
+It uses the previous functions mentioned to generate instances of the traditional and alternative queue.
+
+We first simulate both models with a clean start for 30mins, with the non-peak interarrival times for 30mins.
+After which, we obtain the queue lengths to use to initialize the peak period.
+The substream is resetted between runs of Traditional and Alternative models and jumped to the next substream when one instance of both models have been run, as shown.
+
+The function will return 1 instance of the difference in waiting times.
+We run this a number of times to obtain values to be used in the t-test later. (100 was enough to get a statistically significant result.)
+
+```{r}
+##Get Simulate 1 round of each model and get the difference
+simulateDiff <- function(){
+  #Simulating both models with a clean start for 30mins
+  ## skip to beginning of next substream
+  rstream.nextsubstream(gendemand);
+  InitialQueue_T = round(simulateOneRun_T(0,30,arrival0))
+  ## reset to beginning of current substream
+  rstream.resetsubstream(gendemand);
+  InitialQueue_A = round(simulateOneRun_A(0,0,30,arrival0))
+  
+  ## skip to beginning of next substream
+  rstream.nextsubstream(gendemand);
+  Data_T = simulateOneRun_T(InitialQueue_T[2],45,arrival1)
+  ## reset to beginning of current substream
+  rstream.resetsubstream(gendemand);
+  Data_A = simulateOneRun_A(InitialQueue_A[1],InitialQueue_A[2],45,arrival1) 
+  
+  return(Data_T[3]-Data_A[3])
+  #3 for Avg Waiting Time
+}
+
+
+### Run Code ##########################
+dosim <- function(){
+  #Conduct multiple replications of the simulations
+  results <- replicate(100,simulateDiff())
+  #display whole numbers for visual viewing.
+  return(round(results) )
+}  
+results = dosim()
+```

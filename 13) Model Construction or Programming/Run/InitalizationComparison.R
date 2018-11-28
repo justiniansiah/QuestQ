@@ -5,6 +5,7 @@ if(!require(rstream)){
   install.packages("rstream")
   library(rstream)
 }
+
 ### Set Parameters ##########################
 ## initialize streams of random numbers
 gendemand <- new("rstream.mrg32k3a")
@@ -13,6 +14,7 @@ gendemand <- new("rstream.mrg32k3a")
 arrival0 = 56     #mean arrival times of customers (non-peak)
 arrival1 = 43     #mean arrival times of customers (peak)
 service = 45      #mean service times of counter
+normmean = 48
 
 runtime = 45 #mins
 
@@ -85,7 +87,7 @@ simulateOneRun_T <- function (QueueStart,Runtime,Interarrivals) {
       if (service.flag == 0){
         service.flag = 1
         TimetoService = service #for fixed service times
-        TimetoService = round(randnorm(50,10,10)) #use normal dis instead
+        TimetoService = round(randnorm(normmean,10,10)) #use normal dis instead
       }
       #else, system is serving a customer
       else{
@@ -130,36 +132,62 @@ simulateOneRun_T <- function (QueueStart,Runtime,Interarrivals) {
 }
 
 #input max queue length and number of iterations to run
-dosim <- function(iter=1){
+dosim <- function(queue,iter=1){
+  #Warning (so you dont crash your com)
+  if (queue > 10){message("Queue length of >10; Not really sensible, but if you want, go change the code to allow.")}
+  else if (queue < 0){message("Invalid Queue Length.")}
+  else if (iter > 1000){message("Running >1000 iterations will take a long time. If you want, go change the code to allow.")}
+  #Actual code here
+  else{
     #run code
-    Q0 <- rep(NA,iter) #vector to store average wait times for each queue length
-    Q1 <- rep(NA,iter)
-    diff <- rep(NA,iter)
-    x <- c(1:iter)
+    AvgWaitTimes <- rep(NA,queue+1) #vector to store average wait times for each queue length
     
+    #Run 1 iteration
     #Get the average wait times using intial queue length of 0-queue
+    rstream.nextsubstream(gendemand);
+    for (i in 0:queue){
+      temp <- simulateOneRun_T(i,runtime, arrival1)
+      AvgWaitTimes[i+1] <- temp[3]
+      rstream.resetsubstream(gendemand);
+    }
+    
+    iter = iter - 1
+    #Repeat iter-1 times
     rep = 1
     while(iter>0){
       rstream.nextsubstream(gendemand);
-      temp <- simulateOneRun_T(0,runtime, arrival1)
-      Q0[rep] <- temp[3]
-      rstream.resetsubstream(gendemand);
-      temp <- simulateOneRun_T(1,runtime, arrival1)
-      Q1[rep] <- temp[3]
-      
-      diff[rep] <- Q0[rep] - Q1[rep] #for CI test
-      
+      for (i in 0:queue){ 
+        temp <- simulateOneRun_T(i,runtime, arrival1)             #Run simulation, get average time
+        temp <- temp[3]
+        old_mean <- AvgWaitTimes[i+1]                             #Store old avg in temp var
+        new_mean <- old_mean + (1/(rep+1)) * (temp - old_mean)    #Calc new avg
+        AvgWaitTimes[i+1] <- new_mean                             #Store new avg
+        
+        rstream.resetsubstream(gendemand);
+      }
       rep = rep + 1
-      iter = iter - 1
+      iter = iter - 1  
     }
-    df <- data.frame(x=x,q0=Q0,q1=Q1,diff=diff)
-    return(df)
+    
+    return(AvgWaitTimes)
+  }
 }
 
-results = dosim(100)
+results = dosim(10,100)
 results
 
-CI01 <- t.test(results$diff,conf.level=0.95)$conf.int
-print(CI01)
+if(!require(ggplot2)){
+  install.packages("ggplot2")
+  library(ggplot2)
+}
+
+df <- data.frame(x=c(0:10),y=round(results))
+ggplot(data=df, aes(x=df$x,y=df$y)) +
+  scale_x_continuous(breaks = seq(0, 10, by = 1))+
+  geom_point()+
+  geom_line()+
+  geom_text(aes(label=df$y),size=4, position = position_nudge(y = 10))+
+  labs(x="\nInitial Queue Lengths", y="\nAverage Waiting Times (s)\n")+ 
+  theme_classic()
 
 

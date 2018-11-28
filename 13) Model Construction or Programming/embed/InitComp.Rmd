@@ -1,0 +1,71 @@
+---
+title: "Initialization Size"
+output: html_notebook
+---
+
+This function is used to simulate the traditional queue with different inital queue sizes. We use CRN to help reduce variance in comparison.
+It uses the function to simulate traditional queue and the other RV generating functions.
+It takes in 2 arguments, queue size (to test until) and number of iterations to run.
+It returns the average wait times for each initial queue length, from 0 until the number specified.
+
+
+```{r}
+#Here we do a comparison for the average waiting times for different initial queue lengths
+
+#input max queue length and number of iterations to run
+dosim <- function(queue,iter=1){
+  #run code
+  AvgWaitTimes <- rep(NA,queue+1) #vector to store average wait times for each queue length
+  
+  #Run 1 iteration
+  #Get the average wait times using intial queue length of 0-queue
+  rstream.nextsubstream(gendemand);
+  for (i in 0:queue){
+    temp <- simulateOneRun_T(i,runtime, arrival1)
+    AvgWaitTimes[i+1] <- temp[3]
+    rstream.resetsubstream(gendemand);
+  }
+  
+  iter = iter - 1
+  #Repeat iter-1 times
+  rep = 1
+  while(iter>0){
+    rstream.nextsubstream(gendemand);
+    for (i in 0:queue){ 
+      temp <- simulateOneRun_T(i,runtime, arrival1)             #Run simulation, get average time
+      temp <- temp[3]
+      old_mean <- AvgWaitTimes[i+1]                             #Store old avg in temp var
+      new_mean <- old_mean + (1/(rep+1)) * (temp - old_mean)    #Calc new avg
+      AvgWaitTimes[i+1] <- new_mean                             #Store new avg
+      
+      rstream.resetsubstream(gendemand);
+    }
+    rep = rep + 1
+    iter = iter - 1  
+  }
+  
+  return(AvgWaitTimes)
+}
+```
+
+We run the function with a queue length of 10 as that is the mode of our observations.
+We obtain an average wait time over 1000 iterations
+
+```{r}
+results = dosim(10,1000)
+results
+```
+
+
+Then we plot a graph of Average Time against Queue length (the graph can be seen later on in Experimental Runs)
+```{r}
+library(ggplot2)
+df <- data.frame(x=c(0:10),y=round(results))
+ggplot(data=df, aes(x=df$x,y=df$y)) +
+  scale_x_continuous(breaks = seq(0, 10, by = 1))+
+  geom_point()+
+  geom_line()+
+  geom_text(aes(label=df$y),size=4, position = position_nudge(y = 10))+
+  labs(x="\nInitial Queue Lengths", y="\nAverage Waiting Times (s)\n")+ 
+  theme_classic()
+```
