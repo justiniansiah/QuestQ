@@ -4,8 +4,8 @@
 library(rstream)
 
 ## parameters system
-arrival0 = 90     #mean arrival times of customers (non-peak)
-arrival1 = 45     #mean arrival times of customers (peak)
+arrival0 = 56     #mean arrival times of customers (non-peak)
+arrival1 = 43     #mean arrival times of customers (peak)
 service = 45      #mean service times of counter
 
 ## Poisson didn't work so I'm trying out exponential (non CRN, testing if this works)

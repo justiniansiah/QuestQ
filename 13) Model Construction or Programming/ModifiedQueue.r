@@ -4,8 +4,8 @@
 library(rstream)
 
 ## parameters system
-arrival0 = 90     #mean arrival times of customers (non-peak)
-arrival1 = 45     #mean arrival times of customers (peak)
+arrival0 = 56     #mean arrival times of customers (non-peak)
+arrival1 = 43     #mean arrival times of customers (peak)
 service_ordertime = 20      #Time taken to order/pay for food (fixed at 20s)
 
 foodmean = 20
