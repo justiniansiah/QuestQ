@@ -20,10 +20,10 @@ From the above, we derived the following:
 \begin{enumerate}
     \item Inter-arrival times between customers entering the queuing system. The $j$th inter-arrival time is given by: \[A_i-A_{i-1}\]
     \item Inter-departure time between customers leaving the system. The $j$th inter-departure time is given by: \[D_i-D_{i-1}\]
-    \item Total waiting time since entering the system, till customers depart from their system after collecting an order. 
-    The total waiting time of the $i$th customer is given by: \[D_i-A_i\]
-    \item Total waiting time prior to making an order for the $i$th customer:
+    \item Lead time is traditionally interpreted as the total waiting time prior to making an order for the $i$th customer:
     \[D_i-A_i-S_i\]
+    \item In our project, we denote lead time as the total waiting time since entering the system, till customers depart from their system after collecting an order. 
+    The lead time of the $i$th customer is thus given by: \[D_i-A_i\]
     \item The total waiting time for all customers: \[\sum_i^n D_i-A_i\]
     \item Average waiting, during the 45 minute peak period:
     \[\frac{\sum_i^n D_i-A_i}{n}\]

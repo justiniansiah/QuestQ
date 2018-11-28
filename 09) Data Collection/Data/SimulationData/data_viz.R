@@ -1,7 +1,8 @@
 nonpeak <- read.csv("C:/Users/bhara/Google Drive/SUTD/ESD T6/Simulation/project/QuestQ/09) Data Collection/Data/SimulationData/simulated_nonpeak.csv")
 peak <- read.csv("C:/Users/bhara/Google Drive/SUTD/ESD T6/Simulation/project/QuestQ/09) Data Collection/Data/SimulationData/simulated_peak.csv")
-leadnpeak<- read.csv("C:/Users/bhara/Google Drive/SUTD/ESD T6/Simulation/project/QuestQ/09) Data Collection/Data/SimulationData/simulated_peak_lead.csv")
-leadpeak<-read.csv("C:/Users/bhara/Google Drive/SUTD/ESD T6/Simulation/project/QuestQ/09) Data Collection/Data/SimulationData/simulated_nonpeak_lead.csv")
+leadpeak<- read.csv("C:/Users/bhara/Google Drive/SUTD/ESD T6/Simulation/project/QuestQ/09) Data Collection/Data/SimulationData/simulated_peak_lead.csv")
+leadnpeak<-read.csv("C:/Users/bhara/Google Drive/SUTD/ESD T6/Simulation/project/QuestQ/09) Data Collection/Data/SimulationData/simulated_nonpeak_lead.csv")
+
 require(reshape)
 nonpeak<-subset(nonpeak, select=c('simulated','observed'))
 peak<-subset(peak, select=c('simulated','observed'))
