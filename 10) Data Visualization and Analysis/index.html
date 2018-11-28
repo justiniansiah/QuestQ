@@ -54,7 +54,7 @@
 			<div class="tab">
 	  			<button class="tablinks" onclick="openTab(event, 'Lead Time')" id="defaultOpen"><b>Lead time</b></button>
 	  			<button class="tablinks" onclick="openTab(event, 'Interarrival Time')"><b>Interarrival Time</b></button>
-	  			<button class="tablinks" onclick="openTab(event, 'Queue Length')"><b>Samples of Data Collected</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'Queue Length')"><b>Queue Length</b></button>
 	  			</b></button>
 			</div>
 
@@ -73,9 +73,10 @@
 			<div>&nbsp;</div>
 
 			<div class="divmiddle" style="width: 80%; margin-top: 2rem;">
-				<p class="pjust">In the figure on the left we observe the change of lead time over the total number of customers during peak hours</p>
+				<p class="pjust">In the figure on the left we observe the change of lead time over the total number of customers during various peak hour periods. Each period can be differentiated by the second series which denotes the total number of customers in each period. Lead time is defined as the duration between when the customer first joins the queue and finally collects his order. In each peak hour period there are between 1-3 speaks in lead time ranging between 370-740 seconds(6 mins 10 seconds - 12 mins 20 seconds). The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=(24,171,276,370.5,740)
+				Through this project, we aim to lower the average waiting time through a more efficient queueuing system, which would in turn lead to a reduction in lead time for customers to collect their orders.</p>
 				<p class="pjust">In the figure on the right, we observe the distribution
-				of all lead time observations collected.</p>
+				of all lead time observations collected. The bin with the modal lead time is that which is between 316-389 seconds.</p>
 			</div>
 
 				
@@ -96,8 +97,9 @@
 				<div>&nbsp;</div>
 
 				<div class="divmiddle" style="width: 80%;">
-					<p class="pjust">On the left, we have interarrival times per peak period over the total number of customers. Each period can be differentiated by the second series which denotes the total number of customers in each period.</p>
-			 		<p class="pjust">On the right, we have the interarrival time distributions for all peak periods.</p>
+					<p class="pjust">On the left, we have interarrival times per peak period over the total number of customers. Each period can be differentiated by the second series which denotes the total number of customers in each period. We notice that there are occasions where the interarrival times of 0, which denotes that a batch of customers have joined the queue and there are also large spikes in interarrival times, which indicate no customers had joined the queue for a relatively long period of time.
+					The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=(0,4,25,65.5,305)</p>
+			 		<p class="pjust">On the right, we have the interarrival time distributions for all peak periods. The distribution appears to be exponential with large interarrival times close to the first bin(0-28) and quickly tapering off to a small proportion of interarrival times after 112 seconds.</p>
 			 	</div>
 				
 			</div>
@@ -116,7 +118,7 @@
 				<div>&nbsp;</div>
 
 				<div class="divmiddle" style="width: 80%;">
-					<p class="pjust">On the left, we have queue length per peak period over the total number of customers. Each period can be differentiated by the second series which denotes the total number of customers in each period.</p>
+					<p class="pjust">On the left, we have queue length per peak period over the total number of customers. Each period can be differentiated by the second series which denotes the total number of customers in each period. From the data, we observe that there are usually about 1-3 spike sin queue length which corresponds to the observations from lead time analysis. The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=(1,4,6,9.5,19) </p>
 			 		<p class="pjust">On the right, we have the queue length distributions for all peak periods.</p>
 			 	</div>
 
