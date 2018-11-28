@@ -67,7 +67,7 @@ simulateOneRun <- function (QueueStart,Runtime,Interarrivals) {
       if (service.flag == 0){
         service.flag = 1
         TimetoService = service #for fixed service times
-        TimetoService = round(randnorm(50,10,10)) #use normal dis instead
+        TimetoService = round(randnorm(48,10,10)) #use normal dis instead
       }
       #else, system is serving a customer
       else{
@@ -124,7 +124,8 @@ simulatePeak <- function(){
 #3 for Avg Waiting Time
 
 #Conduct multiple replications of the simulations
-results <- replicate(100,simulatePeak())
+results <- replicate(1000,simulatePeak())
+hist(round(results[3,]) )
 
 #display whole numbers for visual viewing.
 message("Average Queue Lengths")
