@@ -51,6 +51,7 @@ h2{
   color: #000;
   font-family: "Arial Black", Gadget, sans-serif;
   font-size: 20px;
+  text-align: left;
 }
 
 .nextbtn_right{ 
@@ -61,6 +62,7 @@ h2{
   color: #000;
   font-family: "Arial Black", Gadget, sans-serif;
   font-size: 20px;
+  text-align: right;
 }
 
 /*tables
