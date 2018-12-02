@@ -69,7 +69,7 @@
 				</div>	
 				<div class = "divmiddle">
 					<p>
-						Before we begin our comparison between the initial queueing systemand the proposed queueing system, it is essential that we ensure our simulated observations of the initial queuing system are statistically similar to what we observe in real life. Non-peak period analysis ensures that we intialise our queueing systems realistically, and peak period analysis ensures that our system behaves correctly during periods we intend on analysing for comparison.
+						Before we begin our comparison between the initial queueing system and the proposed queueing system, it is essential that we ensure our simulated observations of the initial queuing system are statistically similar to what we observe in real life. Non-peak period analysis ensures that we intialise our queueing systems realistically, and peak period analysis ensures that our system behaves correctly during periods we intend on analysing for comparison.
 					</p>
 					<p>
 						In order to do this, we begin by comparing the distributions of simulated and observed interarrival times during both peak and non-peak periods. 
@@ -82,24 +82,24 @@
 						On the other hand, our values for the peak interarrival times faired much better. Although it is still overestimating the shorter arrivals, it is a smaller overestimation. Though it might still result in longer waiting times due to a longer queue being formed.
 					</p> 
 					<p> 
-			  			In order to justify the claim that both simulated distributions are sufficiently statistically close to observed distributions, we perform a paired t-test on simulated and observed arrays of data points, for both peak and non-peak datasets, where the null and the alternative hypothesis respectively are:
+			  			<b>In order to justify the claim that both simulated distributions are sufficiently statistically close to observed distributions, we perform a paired t-test on simulated and observed arrays of data points, for both peak and non-peak datasets, where the null and the alternative hypothesis respectively are:</b>
 			  		</p>
 			  		<p>
-			  			H<sub>0</sub>: Mean of simulated and observed inter-arrival observations are statistically equivalent, &mu;<sub>0</sub> = &mu;<sub>1</sub>
+			  			<i>H<sub>0</sub>: Mean of simulated and observed inter-arrival observations are statistically equivalent, &mu;<sub>0</sub> = &mu;<sub>1</sub></i>
 			  		</p>
 			  		<p>
-			  			H<sub>&alpha;</sub>: Mean of simulated and observed observations are not statistically equivalent, &mu;<sub>0</sub> ≠ &mu;<sub>1</sub>
-			  		</p>
-
-			  		<p>
-			  			Subsequently, for peak period interarrival times, we obtained a p value of  0.3202 and T-statistic value of 0.8605, after performing a two-tailed pairwise t-test. At 95% confidence, the T-statistic is greater smaller than the T-critical value 1.96 and the p-value is greater than the &alpha; of 0.05, we can conclude that is insufficient evidence to reject the null hypothesis.
-			  		</p>
-			  		<p>
-			  			For non-peak interarrival times, we obtained a p value of  0.321 and T-statistic value of 1.003, after performing a two-tailed pairwise t-test. At 95% confidence, the T-statistic is greater smaller than the T-critical value 2.01 and the p-value is greater than the &alpha; of 0.05, we can conclude that is insufficient evidence to reject the null hypothesis.
+			  			<i>H<sub>&alpha;</sub>: Mean of simulated and observed observations are not statistically equivalent, &mu;<sub>0</sub> ≠ &mu;<sub>1</sub></i>
 			  		</p>
 
 			  		<p>
-			  			In other words, the means of the simulated and observed values of interarrival time time for the first queueing system in both peak and non-peak periods are statistically similar.
+			  			Subsequently, for peak period interarrival times, we obtained a <b>p value of 0.3202</b> and <b>T-statistic value of 0.8605</b>, after performing a two-tailed pairwise t-test. At 95% confidence, the T-statistic is smaller than the T-critical value 1.96 and the p-value is greater than the &alpha; of 0.05, <b>we can conclude that is insufficient evidence to reject the null hypothesis.</b>
+			  		</p>
+			  		<p>
+			  			For non-peak interarrival times, we obtained a <b>p value of 0.321</b> and <b>T-statistic value of 1.003</b>, after performing a two-tailed pairwise t-test. At 95% confidence, the T-statistic is greater smaller than the T-critical value 2.01 and the p-value is greater than the &alpha; of 0.05, <b>we can conclude that is insufficient evidence to reject the null hypothesis.</b>
+			  		</p>
+
+			  		<p>
+			  			<u><b>In other words, the means of the simulated and observed values of interarrival time time for the first queueing system in both peak and non-peak periods are statistically similar.</b></u>
 			  		</p>
 				</div>
 
@@ -116,7 +116,7 @@
 
 			  	<div class = "divmiddle" style = "margin-top: 1rem;">
 			  		<p>
-			  			After ensuring that inter-arrival time simulations were correct for both peak, and non-peak periods, we begin our analysis on simulated lead time observations during peak periods. In this section, we compare simulated and observed values of lead time for the initial model during peak periods only, and evaluate wether our simulated observations match real-life observations 
+			  			After ensuring that inter-arrival time simulations were correct for both peak, and non-peak periods, we begin our analysis on simulated lead time observations during peak periods. In this section, we compare simulated and observed values of lead time for the initial model during peak periods only, and evaluate whether our simulated observations match real-life observations 
 			  		</p>
 			  		<p>
 			  			As can be seen from the figure above, the simulated values matches the observed values quite well, as seen from the shape. However it underpredicts the number of shorter waiting times (0-200s) and overpredicts the number of longer waiting times (400-600).
@@ -124,21 +124,21 @@
 			  		<p>
 			  			Considering that there may be errors in observation and our sample size is spread over a different days, and could have influenced the observations, the simulated values generated looks to be sufficiently accurate.</p>
 			  		<p> 
-			  			In order to justify the claim, we perform a paired t-test on simulated and observed arrays of data points where the null and the alternative hypothesis respectively are:
+			  			<b>In order to justify the claim, we perform a paired t-test on simulated and observed arrays of data points where the null and the alternative hypothesis respectively are:</b>
 			  		</p>
 			  		<p>
-			  			H<sub>0</sub>: Mean of simulated and observed peak lead time values are statistically equivalent, &mu;<sub>0</sub> = &mu;<sub>1</sub>
+			  			<i>H<sub>0</sub>: Mean of simulated and observed peak lead time values are statistically equivalent, &mu;<sub>0</sub> = &mu;<sub>1</sub></i>
 			  		</p>
 			  		<p>
-			  			H<sub>&alpha;</sub>: Mean of simulated and observed peak lead time values are not statistically equivalent, &mu;<sub>0</sub> ≠ &mu;<sub>1</sub>
-			  		</p>
-
-			  		<p>
-			  			Subsequently, we obtained a p value of  0.0681 and T-statistic value of 1.8305, after performing a two-tailed pairwise t-test. At 95% confidence, the T-statistic is greater smaller than the T-critical value 1.96 and the p-value is greater than the &alpha; of 0.05, we can conclude that is insufficient evidence to reject the null hypothesis.
+			  			<i>H<sub>&alpha;</sub>: Mean of simulated and observed peak lead time values are not statistically equivalent, &mu;<sub>0</sub> ≠ &mu;<sub>1</sub></i>
 			  		</p>
 
 			  		<p>
-			  			In other words, the means of the simulated and observed values of lead time in the first queueing system is statistically similar.
+			  			Subsequently, we obtained a <b>p value of 0.0681 and T-statistic value of 1.8305</b>, after performing a two-tailed pairwise t-test. At 95% confidence, the T-statistic is greater smaller than the T-critical value 1.96 and the p-value is greater than the &alpha; of 0.05, <b>we can conclude that is insufficient evidence to reject the null hypothesis.</b>
+			  		</p>
+
+			  		<p>
+			  			<u><b>In other words, the means of the simulated and observed values of lead time in the first queueing system is statistically similar.</b></u>
 			  		</p>
 
 			  	</div>
