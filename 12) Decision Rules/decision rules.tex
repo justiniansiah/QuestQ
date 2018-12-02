@@ -14,9 +14,9 @@
 \maketitle
 \begin{enumerate}
     \item Customers who join queues always makes an order. In reality, there is a small occurrence of customers that leave queues before making orders. In data collection, these observations are voided, and will not be accounted for. As such, in simulation design the probability distribution of customers leaving prematurely are not modelled.
-    \item Batch arrivals of customers are not accounted for. As such, simulation models assume that customers arrive one at a time, although in some cases their inter arrival time might be close to zero.
-    \item Service times by cashiers are modelled as fixed values although there is some variation in reality especially during non peak hours. However, based on our observations, service times of cashiers during peak hours remain relatively constant.
+    \item Batch arrivals of customers are not accounted for precisely. Our simulation models assume that customers arrive one at a time, and even if inter-arrival time is 0, there will still be some lag unaccounted for between one arrival and the next. Moreover, we assume that customers make orders, one at a time, and not in batches. As such, our systems are not designed to accommodate grouped customer behavior.
+    \item Service times by cashiers are modeled as fixed values although there is some variation in reality especially during non peak hours. However, based on our observations, service times of cashiers during peak hours remain relatively constant.
     \item Despite preparation times for different items served by a food stall being different, we assume that various items sold by one stall follow a singular service time distribution for the sake of reducing model complexity.
-    \item We assume that cooking operations remain unchanged despite modelling the queueing system differently.
+    \item We assume that cooking operations remain unchanged despite modeling the queuing system differently.
 \end{enumerate}
 \end{document}
