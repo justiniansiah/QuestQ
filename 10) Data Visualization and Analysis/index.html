@@ -83,13 +83,13 @@
 					<p class="pjust">In the figure on the left we observe the change of lead time over the total number of customers during various peak hour periods. Each period can be differentiated by the second series which denotes the total number of customers in each period. Lead time is defined as the duration between when the customer first joins the queue and finally collects his order. 
 					</p>
 					<p class="pjust">
-					In each peak hour period there are between 1-3 speaks in lead time ranging between 370 to 740 seconds (ie., 6 mins 10 seconds to 12 mins 20 seconds). The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=( )
+					In each peak hour period there are between 1-3 speaks in lead time ranging between 370 to 740 seconds (ie., 6 mins 10 seconds to 12 mins 20 seconds). The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=(33,185,305,379,740). It is also worth noting that standard deviation is high at 151 seconds.
 					</p>
 					<p class="pjust">In the figure on the right, we observe the distribution
-					of all lead time observations collected. The bin with the modal lead time is __.
+					of all lead time observations collected. The bin with the modal lead time is [328,387].
 					</p>
 					<p class="pjust">
-					Through this project, we aim to lower the average waiting time through a more efficient queueuing system, which would in turn lead to a reduction in lead time for customers to collect their orders.
+					Through this project, we aim to lower the average waiting time during peak hours through a more efficient queueuing system, which would in turn lead to a reduction in lead time for customers to collect their orders.
 					</p>
 				</div>
 				
@@ -111,7 +111,7 @@
 
 				<div class="divmiddle" style="width: 80%;">
 					<p class="pjust">On the left, we have interarrival times per peak period over the total number of customers. Each period can be differentiated by the second series which denotes the total number of customers in each period. We notice that there are occasions where the interarrival times of 0, which denotes that a batch of customers have joined the queue and there are also large spikes in interarrival times, which indicate no customers had joined the queue for a relatively long period of time.
-					The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=()</p>
+					The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=(0,4,23.5,61,305)</p>
 			 		<p class="pjust">On the right, we have the interarrival time distributions for all peak periods. The distribution appears to be exponential with large interarrival times close to the first bin(0-30).</p>
 			 	</div>
 				
@@ -132,8 +132,8 @@
 				<div>&nbsp;</div>
 
 				<div class="divmiddle" style="width: 80%;">
-					<p class="pjust">On the left, we have queue length per peak period over the total number of customers. Each period can be differentiated by the second series which denotes the total number of customers in each period. From the data, we observe that there are usually about 1-3 spike sin queue length which corresponds to the observations from lead time analysis. The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=( ) </p>
-			 		<p class="pjust">On the right, we have the queue length distributions for all peak periods.</p>
+					<p class="pjust">On the left, we have queue length per peak period over the total number of customers (in orange). Each period can be differentiated by the first series (increasing blue line) which denotes the total number of customers in each period. From the data, we observe that there are usually about 1-3 spikes in queue length which corresponds to the observations from lead time analysis. The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=(1,5,8,11,19)</p>
+			 		<p class="pjust">On the right, we have the queue length distributions for all peak periods. The bin with the modal count of queue length sizes is that which is between [4,7]</p>
 			 	</div>
 		 	</div>
 
@@ -155,10 +155,10 @@
 					<p class="pjust">In the figure on the left we observe the change of lead time over the total number of customers during various non-peak hour periods. Each period can be differentiated by the second series which denotes the total number of customers in each period. Lead time is defined as the duration between when the customer first joins the queue and finally collects his order. 
 					</p>
 					<p class="pjust">
-					In each non-peak hour period there are between 
+					In each peak hour period there are an erratic number of spikes and troughs. This matches expectation, as during non-peak hours, patrons of food stalls enter the system in an unsystematic fashion. The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=(90,157,262,330,498).
 					</p>
 					<p class="pjust">In the figure on the right, we observe the distribution
-					of all lead time observations collected.
+					of all lead time observations collected and note that the bin with the modal frequency is [90,200].
 					</p>
 					
 				</div>
@@ -182,8 +182,8 @@
 
 				<div class="divmiddle" style="width: 80%;">
 					<p class="pjust">On the left, we have interarrival times per non-peak period over the total number of customers. Each period can be differentiated by the second series which denotes the total number of customers in each period. We notice that there are occasions where the interarrival times of 0, which denotes that a batch of customers have joined the queue and there are also large spikes in interarrival times, which indicate no customers had joined the queue for a relatively long period of time.
-					The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=( )</p>
-			 		<p class="pjust">On the right, we have the interarrival time distributions for all peak periods. The distribution appears to be exponential with large interarrival times close to the first bin(0-30).</p>
+					The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=(0,6,38,87,229)</p>
+			 		<p class="pjust">On the right, we have the interarrival time distributions for all peak periods. The distribution appears to be exponential with large interarrival times close to the first bin(0-30). We note that in both, peak and non-peak periods, batch arrivals appear to be common phenomena.</p>
 			 	</div>
 				
 			</div>
@@ -203,8 +203,8 @@
 				<div>&nbsp;</div>
 
 				<div class="divmiddle" style="width: 80%;">
-					<p class="pjust">On the left, we have queue length per non-peak period over the total number of customers. Each period can be differentiated by the second series which denotes the total number of customers in each period. From the data, we observe that there are usually about 1-3 spikes in queue length which corresponds to the observations from lead time analysis. The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=( ) </p>
-			 		<p class="pjust">On the right, we have the queue length distributions for all peak periods.</p>
+					<p class="pjust">On the left, we have queue length per non-peak period over the total number of customers (in orange). Each period can be differentiated by the first series which denotes the total number of customers in each period (in blue). From the data, we observe that there are usually about 1-3 spikes in queue length which corresponds to the observations from lead time analysis. The 5 number summary of the queue length data is as follows: (min, 25th percentile, median, 75th percentile, max)=(1,3,4,6,8). We note that the queue sizes are always generally shorter than that observed in peak periods, which is consistent with out expectations.</p>
+			 		<p class="pjust">On the right, we have the queue length distributions for all peak periods The distribution is skewed towards smaller values and the modal bins are [4,5] and [5,6].</p>
 			 	</div>
 			 </div>
 		</div>
