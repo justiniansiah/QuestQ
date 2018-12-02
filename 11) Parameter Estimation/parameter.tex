@@ -13,15 +13,19 @@
 \author{}
 \date{}
 \maketitle
-\section{Initial Model}
-The following population parameters were estimated by collecting queuing
+Earlier, we had defined lead time to be the total time between a customer joining a queuing system and leaving it to be lead time. By simulating an alternative queuing structure we hope to bring reduce our estimate for a food stalls's lead time. This type of problem is of terminating type, as peak periods eventually come to an end, and arrival behavior changes. As such, we initial the queue by simulating 30 minutes of non-peak queening behavior followed by 60 minutes of peak queue-ing behavior. The arrival rate of customers is thus non-homogeneous, comprised of both peak and non beak inter-arrival times.
+
+The alternative queuing system is one in which queues are forcefully split, customers are asked to wait in line again at a seperate counter, immediately after making an order. This meant that in addition to inter-arrival time, additional sources of randomness originated from the payment time (ie. time taken to a process a payment once the customer reaches the front of the first queue, and before he joins the second queue), as well as the final preparation time (ie. Customers are not served first-come first serve anymore, instead served whenever there order is ready).
+
+Thus, the following population parameters were estimated by collecting queuing
 behavior data and modeling parameter distributions:
+\section*{Initial Model}
 \begin{itemize}
     \item Non-Peak Inter-arrival time, $\lambda = \exp(90)$
     \item Peak Inter-arrival time, $\lambda = \exp(45)$
     \item Fixed Service time, $\mu = 45$ seconds
 \end{itemize}
-\section{Alternative Model}
+\section*{Alternative Model}
 \begin{itemize}
     \item Non-Peak Inter-arrival time, $\lambda = \exp(90)$
     \item Peak Inter-arrival time, $\lambda = \exp(45)$
