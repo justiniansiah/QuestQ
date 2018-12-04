@@ -44,14 +44,14 @@
 
 			<div class = "text">
 				<p>Food and beverage outlets in the price-competitive landscape of hawker centres and food courts typically experience similar intra-day customer demand distributions, with peaks during breakfast, lunch and dinner timings. Efficient queueing systems allow these enterprises to meet customer	demand during these peak periods by increasing through-put rates. </p>
-				<p>In this project, we aim to model and simulate the queueing systems of one of the food stalls in the SUTD canteen during peak periods. After analysing the distributions of customer arrivals, departures, and service times, we aim to propose an alternative queueing model for the stall. By simulating the original customer arrival rate with the new model, we will determine if the alternative queueing model results in a greater throuput rate.	</p>							
+				<p>In this project, we aim to model and simulate the queueing systems of one of the food stalls in the SUTD canteen during peak periods. After analysing the distributions of customer arrivals, departures, and service times, we aim to simulate the flow of customers through the current queuing system and that of a proposed alternative queueing model. By simulating the original customer arrival rate with the new model, we will determine if the alternative queueing model will help customers to spend less time in the system (lower lead time).	</p>							
 
 				<div class = "keyqn">		
 					<p>
 					<b>Key questions that our project aims to answer:</b> <br />
 					<ul style="list-style-type:disc">
-						<li>Is the throughput rate of the alternative queueuing model statistically more significant than that of the currently utilized queueing system? </li>
-						<li>Does the alternative queueing model decrease waiting time for customers?</li>
+						<li>Is the time customers spend (lead time) of the alternative queueuing model statistically more significant than that of the currently utilized queueing system? </li>
+						<li>How does the number of customers at the start (initialization) affect the lead time?</li>
 					</ul>
 					</p>	
 
@@ -59,7 +59,7 @@
 						<b>Assumptions: </b>
 					<ol>
 						<li>Customer who joins the queue will definitely make an order</li>
-						<li>Lead time is equivalent to waiting time.</li>
+						<li>We will use lead time (total waiting time for customer, inclusive of waiting for food.)</li>
 						<li>Each item sold by the stall follows the same service time distribution</li>
 						<li>Cooking operations remain unchanged despite of alternative queueing models</li>
 					</ol>
