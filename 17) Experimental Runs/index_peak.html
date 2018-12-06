@@ -41,25 +41,25 @@
 
 			<!-- Intra-navigation buttons -->
 			<button	type="button" class="selectbuttons"  onClick="location.href='index.html'"><span>Interarrivals</span></button>
-			<button	type="button" class="selectbuttons selected"  onClick="location.href='index.html'" disabled><span>Average Waiting Times</span></button>
+			<button	type="button" class="selectbuttons selected"  onClick="location.href='index.html'" disabled><span>Lead Times</span></button>
 		</div>	
 
 		<!-- Stuff -->
 		<div class = "divcenter" id="Avg Wait Time">
-			<h2>Average Waiting Time</h2>
+			<h2>Lead Times</h2>
 			<br />
 
 			<!-- Tab Header -->
 			<div class="tab">
-	  			<button class="tablinks" onclick="openTab(event, 'SimvsObs')" id="defaultOpen"><b>Simulated vs Observed Values</b></button>
-	  			<button class="tablinks" onclick="openTab(event, 'DiffInit')"><b>Different Initialization Queues</b></button>
-	  			<button class="tablinks" onclick="openTab(event, '1vs2')"><b>Alternative Queue</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'SimvsObs')" id="defaultOpen"><b>FCFS Simulated vs Observed Values</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'DiffInit')"><b>Sensitivity Analysis</b></button>
+	  			<button class="tablinks" onclick="openTab(event, '1vs2')"><b>Tandem Queue</b></button>
 			</div>
 
 			<!-- Tab content -->
 			<!-- Simulated vs Observed Values -->
 			<div id="SimvsObs" class="tabcontent divcenter">
-			  <h3>Simulated vs Observed Values</h3>
+			  <h3>Simulated vs Observed Values of lead times in FCFS</h3>
 
 				<figure>
 					<img src="img/lead_peak.png" alt="Graph of Avg Wait times (Simulated)" width="70%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
@@ -113,7 +113,7 @@
 
 			  	<p>Each instance of each system is run with a clean slate for 30mins with the non-peak period interarrival distribution. The resulting queue lengths at the end of 30mins is then used to initalize second instance with the peak period interarrival distribution..</p> 
 
-			  	<p>We simulated 100 iterations of the two systems with CRN and took the difference between the average waiting time. The data is saved in the csv <a href="modelcomparison.csv">here</a> the resulting confidence interval with &alpha; = 0.05:</p>
+			  	<p>We simulated 100 iterations of the two systems with CRN and took the difference between the average waiting time. The data is saved in the csv <a href="modelcomparison.csv">here</a> the resulting paired t confidence interval with &alpha; = 0.05:</p>
 
 			  	<p style="text-align: center; font-size: 20px; font-weight:bold; ">( 239.5266 , 296.6334 )</p>
 			  </div>

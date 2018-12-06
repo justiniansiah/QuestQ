@@ -46,9 +46,9 @@
 			<!-- Tab Header -->
 			<div class="tab">
 				<button class="tablinks" onclick="openTab(event, 'Intera')" id="defaultOpen"><b>Simulated vs Observed Interarrival Times</b></button>
-	  			<button class="tablinks" onclick="openTab(event, 'SimvsObs')"><b>Simulated vs Observed Lead Times</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'SimvsObs')"><b>FCFS Simulated vs Observed Lead Times</b></button>
 	  			<button class="tablinks" onclick="openTab(event, 'DiffInit')"><b>Sensitivity Analysis</b></button>
-	  			<button class="tablinks" onclick="openTab(event, '1vs2')"><b>Alternative Queue</b></button>
+	  			<button class="tablinks" onclick="openTab(event, '1vs2')"><b>Tandem Queue</b></button>
 	  			<button class="tablinks" onclick="openTab(event, 'limit')"><b>Limitations and Discussion</b></button>
 			</div>
 
@@ -70,7 +70,7 @@
 				</div>	
 				<div class = "divmiddle">
 					<p>
-						Before we begin our comparison between the initial queueing system and the proposed queueing system, it is essential that we ensure our simulated observations of the initial queuing system are statistically similar to what we observe in real life. Non-peak period analysis ensures that we intialise our queueing systems realistically, and peak period analysis ensures that our system behaves correctly during periods we intend on analysing for comparison.
+						Before we begin our comparison between the initial FCFS queueing system and the alternative tandem queueing system, it is essential that we ensure our simulated observations of the FCFS queuing system are statistically similar to what we observe in real life. Non-peak period analysis ensures that we intialise our queueing systems realistically, and peak period analysis ensures that our system behaves correctly during periods we intend on analysing for comparison.
 					</p>
 					<p>
 						In order to do this, we begin by comparing the distributions of simulated and observed interarrival times during both peak and non-peak periods. 
@@ -93,10 +93,10 @@
 			  		</p>
 
 			  		<p>
-			  			Subsequently, for peak period interarrival times, we obtained a <b>p value of 0.3202</b> and <b>T-statistic value of 0.8605</b>, after performing a two-tailed pairwise t-test. At 95% confidence, the T-statistic is smaller than the T-critical value 1.96 and the p-value is greater than the &alpha; of 0.05, <b>we can conclude that is insufficient evidence to reject the null hypothesis.</b>
+			  			Subsequently, for peak period interarrival times, we obtained a <b>p value of 0.3202</b> and <b>T-statistic value of 0.8605</b>, after performing a two-tailed paired t-test. At 95% confidence, the T-statistic is smaller than the T-critical value 1.96 and the p-value is greater than the &alpha; of 0.05, <b>we can conclude that is insufficient evidence to reject the null hypothesis.</b>
 			  		</p>
 			  		<p>
-			  			For non-peak interarrival times, we obtained a <b>p value of 0.321</b> and <b>T-statistic value of 1.003</b>, after performing a two-tailed pairwise t-test. At 95% confidence, the T-statistic is greater smaller than the T-critical value 2.01 and the p-value is greater than the &alpha; of 0.05, <b>we can conclude that is insufficient evidence to reject the null hypothesis.</b>
+			  			For non-peak interarrival times, we obtained a <b>p value of 0.321</b> and <b>T-statistic value of 1.003</b>, after performing a two-tailed paired t-test. At 95% confidence, the T-statistic is greater smaller than the T-critical value 2.01 and the p-value is greater than the &alpha; of 0.05, <b>we can conclude that is insufficient evidence to reject the null hypothesis.</b>
 			  		</p>
 
 			  		<p>
@@ -117,7 +117,7 @@
 
 			  	<div class = "divmiddle" style = "margin-top: 1rem;">
 			  		<p>
-			  			After ensuring that inter-arrival time simulations were correct for both peak, and non-peak periods, we begin our analysis on simulated lead time observations during peak periods. In this section, we compare simulated and observed values of lead time for the initial model during peak periods only, and evaluate whether our simulated observations match real-life observations 
+			  			After ensuring that inter-arrival time simulations were correct for both peak, and non-peak periods, we begin our analysis on simulated lead time observations during peak periods. In this section, we compare simulated and observed values of lead time for the FCFS model during peak periods only, and evaluate whether our simulated observations match real-life observations 
 			  		</p>
 			  		<p>
 			  			As can be seen from the figure above, the simulated values matches the observed values quite well, as seen from the shape. However it underpredicts the number of shorter waiting times (0-200s) and overpredicts the number of longer waiting times (400-600).
@@ -135,7 +135,7 @@
 			  		</p>
 
 			  		<p>
-			  			Subsequently, we obtained a <b>p value of 0.0681 and T-statistic value of 1.8305</b>, after performing a two-tailed pairwise t-test. At 95% confidence, the T-statistic is greater smaller than the T-critical value 1.96 and the p-value is greater than the &alpha; of 0.05, <b>we can conclude that is insufficient evidence to reject the null hypothesis.</b>
+			  			Subsequently, we obtained a <b>p value of 0.0681 and T-statistic value of 1.8305</b>, after performing a two-tailed paired t-test. At 95% confidence, the T-statistic is greater smaller than the T-critical value 1.96 and the p-value is greater than the &alpha; of 0.05, <b>we can conclude that is insufficient evidence to reject the null hypothesis.</b>
 			  		</p>
 
 			  		<p>
@@ -189,15 +189,15 @@
 				</figure>
 				</div>
 				<p>
-					As can be from the figure above, tandem queues appear to significantly improve lead times of customers in queue. There appear to be two peaks in what appears to be close to a bimodal distribution. In order to further validate our findings we performed a pairwise t-test on the lead times.
+					As can be from the figure above, tandem queues appear to significantly improve lead times of customers in queue. There appear to be two peaks in what appears to be close to a bimodal distribution. In order to further validate our findings we performed a paired t-test on the lead times.
 				</p>
 			  	<p>
-			  		For the comparison of the the traditional vs alternative queue, we obtained the following confidence interval with &alpha; = 0.05:</p>
+			  		For the comparison of the the FCFS vs Tandem queue, we obtained the following confidence interval with &alpha; = 0.05:</p>
 
 			  	<p style="text-align: center; font-size: 20px; font-weight:bold; ">( 239.5266 , 296.6334 )</p>
 
 			  	<p class="pjust">
-			  		Since 0 is not within the confidence interval, we can say with 95% confidence that the true difference will be positive, meaning that <b><u>the alternative system is preferred as the original system has a higher average waiting time.</u></b>
+			  		Since 0 is not within the confidence interval, we can say with 95% confidence that the true difference will be positive, meaning that <b><u>the tandem queueing system is preferred as the original system has a higher average waiting time.</u></b>
 			  	</p>
 			  </div>
 			</div>
