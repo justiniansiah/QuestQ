@@ -5,7 +5,7 @@
 \definecolor{ultramarine}{RGB}{254, 250, 214} 
 \usepackage[showframe]{geometry}
 %\usepackage{layout}
-\setlength{\voffset}{-0.75in}
+\setlength{\voffset}{-0.25in}
 \setlength{\headsep}{5pt}
 \begin{document}
 \pagecolor{ultramarine}
@@ -14,7 +14,7 @@
 \date{}
 \maketitle
 \section{Chosen performance measure}
-$\mu_i=$ Expected average wait time in queue for for one customer is system $i$, where $i \in (1,2)$. 
+$\mu_i=$ Expected average wait time in queue in system $i$, where $i \in (1,2)$. 
 \section{Comparison Approach}
 \begin{enumerate}
 \item Take the sample mean of simulation outputs from system $i$.
@@ -26,6 +26,15 @@ $\mu_i=$ Expected average wait time in queue for for one customer is system $i$,
 \item If interval lies on the left/right of zero then system 1/2 is better. Else if system contains zero, the two systems are statistically about the same.
 \end{enumerate}
 \end{enumerate}
-\section{Initial condition}
-Samples of data for a period of time prior to the peak period were recorded (ie., The initialization duration of a peak period from 12pm to 1pm would be 11:30am to 12pm).\\ The number of people in queue at a food stall at the end of this initialization period would set the initialization condition of the queue at the start of the peak period. Therefore by modelling the distribution of the arrival rate prior to the peak period, we can also obtain an accurate distribution for the number of people in queue at the start of the peak period simulation. This distribution would thus be the initialization condition for each simulation run in the experiment.
+\section{Initialization condition}
+Samples of data for a period of time prior to the peak period were recorded (ie., The initialization duration of a peak period from 12pm to 1pm would be 11:30am to 12pm). 
+
+The number of people in queue at a food stall at the end of this initialization period would set the initialization condition of the queue at the start of the peak period. Therefore by modeling the distribution of the inter-arrival rate prior to the peak period, we can also obtain an accurate distribution for the number of people in queue at the start of the peak period simulation. Here, we are essentially describing a non-homogeneous process, where the inter-arrival distribution would be different at different periods of the simulation.
+
+Each simulation run would thus consist of two periods, the non-peak and peak periods. The number of people in the queue at the end of the non-peak period, would be the number of people at the beginning of of the peak period.
+
+\section{Terminating condition}
+The expected average wait time in queue is obtained by replicating this run structure over the number of iterations that represent the total duration of peak and non-peak periods. 
+
+The monte carlo variance reduction technique states that as the number of iterations increase, the variance of the simulation reduces. As such, each run is then replicated for 1000 iterations. 
 \end{document}
