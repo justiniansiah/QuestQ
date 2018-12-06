@@ -49,7 +49,7 @@
 	  			<button class="tablinks" onclick="openTab(event, 'SimvsObs')"><b>Simulated vs Observed Lead Times</b></button>
 	  			<button class="tablinks" onclick="openTab(event, 'DiffInit')"><b>Sensitivity Analysis</b></button>
 	  			<button class="tablinks" onclick="openTab(event, '1vs2')"><b>Alternative Queue</b></button>
-	  			<button class="tablinks" onclick="openTab(event, 'limit')"><b>Limitations and discussion</b></button>
+	  			<button class="tablinks" onclick="openTab(event, 'limit')"><b>Limitations and Discussion</b></button>
 			</div>
 
 			<!-- Tab content -->
@@ -182,10 +182,12 @@
 			  <h3>Comparing alternative queueing systems</h3>
 
 			  <div class = "divmiddle" style = "margin-top: 1rem;">
+			  	<div class="divcenter">
 			  	<figure>
 					<img src="modelcompare.PNG" alt="Comparison between FCFS and Tandem" width="70%" height="height" border=1; style="padding-bottom:0.2rem; padding:1px;">
 					<figcaption>Comparison between FCFS and Tandem Peak Hour Lead Times</figcaption>
 				</figure>
+				</div>
 				<p>
 					As can be from the figure above, tandem queues appear to significantly improve lead times of customers in queue. There appear to be two peaks in what appears to be close to a bimodal distribution. In order to further validate our findings we performed a pairwise t-test on the lead times.
 				</p>
