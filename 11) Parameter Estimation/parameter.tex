@@ -13,18 +13,18 @@ rmargin=90pt}
 \author{}
 \date{}
 \maketitle
-Earlier, we had defined lead time to be the total time between a customer joining a queuing system and leaving it to be lead time. By simulating an alternative queuing structure we hope to bring reduce our estimate for a food stalls's lead time. This type of problem is of terminating type, as peak periods eventually come to an end. Afterwhich, inter-arrival rates change again, and we are not interested in the queueing behavior at this point.
+Earlier, we had defined lead time to be the total time between a customer joining a queuing system and leaving it to be lead time. By simulating an alternative queuing structure we hope to bring reduce our estimate for a food stalls's lead time. This type of problem is of terminating type, as peak periods eventually come to an end. Afterwhich, inter-arrival rates change again, and we are not interested in the queuing behaviour at this point.
 \newline
 
-As such, we initialize the queue by simulating 30 minutes of non-peak queening behaviour followed by 60 minutes of peak queueing behaviour. The arrival rate of customers is non-homogeneous, comprised of both peak and non beak inter-arrival times.
+As such, we initialize the queue by simulating 30 minutes of non-peak queening behaviour followed by 60 minutes of peak queuing behaviour. The arrival rate of customers is non-homogeneous, comprised of both peak and non beak inter-arrival times.
 \newline
-For the current queueing system (FCFS Model), states are sequential. Customer orders and waits till meal is prepared. When the customer collects his food, the next order is taken.
-\newline
-
-The alternative queuing system is one in which queues are forcefully split; customers first queue to make an order and then are asked to wait in queueing area again at a separate counter, immediately after making the order. 
+For the current queuing system (FCFS Model), states are sequential. Customer orders and waits till meal is prepared. When the customer collects his food, the next order is taken.
 \newline
 
-This meant that in addition to inter-arrival time, additional sources of randomness originated from the payment time (ie. time taken to a process a payment once the customer reaches the front of the first queue, and before he joins the second queue), as well as the final preparation time (ie. Customers are not served first-come first serve anymore, instead served whenever there order is ready). As the simulations were performed using the R language, we utilized seperate streams of common random numbers for each source of randomness.
+The alternative queuing system is one in which queues are forcefully split; customers first queue to make an order and then are asked to wait in queuing area again at a separate counter, immediately after making the order. 
+\newline
+
+This meant that in addition to inter-arrival time, additional sources of randomness originated from the payment time (ie. time taken to a process a payment once the customer reaches the front of the first queue, and before he joins the second queue), as well as the final preparation time (ie. Customers are not served first-come first serve anymore, instead served whenever there order is ready). As the simulations were performed using the R language, we utilized separate streams of common random numbers for each source of randomness.
 \newline
 
 The following population parameters were estimated by collecting queuing behaviour data and modeling parameter distributions:
