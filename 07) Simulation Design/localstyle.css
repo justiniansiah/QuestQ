@@ -18,9 +18,22 @@ h2{
   padding:1rem;
 }
 
+.divmiddle{
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1rem;
+}
+
 .imgContainer{
   float:left;
   margin-left:100px;
+}
+
+figcaption{
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* buttons 

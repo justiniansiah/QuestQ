@@ -29,6 +29,7 @@
 	</head>
 
 	<body>
+		<!-- Navigation Buttons -->
 		<button	type="button" class="btn-left nextbtn_left" onClick="location.href='../06) Performance Measurement/index.html'"><span>Performance Measurement</span></button>
 		<button	type="button" class="btn-right nextbtn_right" onClick="location.href='../08) Mathematical Model/index.html'"><span>Mathematical Model</span></button>
 
@@ -36,15 +37,22 @@
 		<button	type="button" class="btn-left nextbtn_left" onClick="location.href='../index.html'" style="margin: 0px;"><span>Back to Contents</span></button>
 		<hr style="border: 1px solid">
 
+		<!-- Title -->
 		<div class = "divcenter">
 			<h1>Simulation Design</h1>
 			<br />
 		</div>
 
+		<!-- Stuff -->
+		<div class = "divmiddle">
+			<p>Description for what we did for this page.</p>
+		</div>
+
 		<div class="tab">
   			<button class="tablinks" onclick="openTab(event, 'CustomerSD')" id="defaultOpen"><b>Customer State Diagram</b></button>
  			<button class="tablinks" onclick="openTab(event, 'ShopSD')"><b>Shop State Diagram</b></button>
-  			<button class="tablinks" onclick="openTab(event, 'CodeFD')"><b>Code Flow Diagram</b></button>
+  			<button class="tablinks" onclick="openTab(event, 'IDEF0')"><b>IDEF0 For Simulation Model</b></button>
+  			<button class="tablinks" onclick="openTab(event, 'CodeFD')"><b>Functional Flow Diagram</b></button>
 		</div>
 
 		<!-- Tab content -->
@@ -62,9 +70,30 @@
 		  <img src="SD_Shop.png" width = 50% style="padding:1rem;">
 		</div>
 
+		<div id="IDEF0" class="tabcontent divcenter">
+			<h3>IDEF0 For Simulation Model</h3>
+			<p>This is the IDEF0 representing our simulation. After setting the required parameters, we input how many runs (repititions) we want to run, and the output will be the average lead time of customers.</p> 
+			<p>A3 shows what happen when we call 1 run of the simulation. Using the generated interarrival and serivce times, it will simulate a non-peak simulation with a cold start and get the queue length after the specified time. After which, it will use that length to initialise the queue for the peak period simulation. This is to account for different queue lengths affecting the simulation (discussed later in Experimental Design and Experimental Runs).
+			<figure>
+				<img src="A-0.png" width = 40% style="padding:1rem;">
+				<figcaption>Page A-0</figcaption>
+			</figure>
+			<hr />
+			<figure>
+				<img src="A0.png" width = 50% style="padding:1rem;">
+				<figcaption>Page A0</figcaption>
+			</figure>
+			<hr />
+			<figure>
+				<img src="A3.png" width = 50% style="padding:1rem;">
+				<figcaption>Page A3</figcaption>
+			</figure>
+			
+		</div>
+
 		<div id="CodeFD" class="tabcontent divcenter">
-		  <h3>Code Flow Diagram</h3>
-		  <p>Logic Diagram for Simulation Code.</p>
+		  <h3>Functional Flow Diagram</h3>
+		  <p>Functional Flow Diagram for the Simulation Code itself to explain the logic behind each iteration.</p>
 		  <img src="SD_Code.png" width = 50% style="padding:1rem;">
 		</div>
 
